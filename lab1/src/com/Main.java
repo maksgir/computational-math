@@ -2,7 +2,8 @@ package com;
 
 
 import com.console.ConsoleWorker;
-import com.dto.Data;
+import com.dto.Answer;
+import com.dto.InputData;
 import com.file.FileWorker;
 import com.math.Counter;
 import com.math.DiagonalWorker;
@@ -11,6 +12,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
 
+
+//   src/com/file/ok.txt
 public class Main {
 
     private static Scanner in = new Scanner(System.in);
@@ -21,17 +24,21 @@ public class Main {
         DataWorker dataWorker = getInfoInputWay();
 
         try {
-            Data data = dataWorker.readData();
+            InputData data = dataWorker.readData();
 
             DiagonalWorker.makeMatrixDiagonalPredominant(data);
 
             Counter counter = new Counter(data);
 
-            counter.countDecision();
+            Answer answer = counter.countDecision();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+    }
+
+    private static void printAnswer(Answer answer){
 
     }
 

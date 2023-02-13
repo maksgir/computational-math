@@ -1,7 +1,7 @@
 package com.file;
 
 import com.DataWorker;
-import com.dto.Data;
+import com.dto.InputData;
 import com.exception.WrongFileDataFormat;
 
 import java.io.BufferedReader;
@@ -22,7 +22,7 @@ public class FileWorker implements DataWorker {
     }
 
     @Override
-    public Data readData() throws Exception {
+    public InputData readData() throws Exception {
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
 
@@ -34,7 +34,7 @@ public class FileWorker implements DataWorker {
             throw new Exception(e.getMessage());
         }
 
-        return new Data(n, e, matrix);
+        return new InputData(n, e, matrix);
     }
 
     private void readN(BufferedReader reader) throws IOException {
@@ -63,8 +63,6 @@ public class FileWorker implements DataWorker {
             }
         }
 
-        System.out.println("Считал матрицу");
-        System.out.println(Arrays.deepToString(matrix));
 
     }
 

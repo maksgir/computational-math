@@ -1,12 +1,12 @@
 package com.math;
 
-import com.dto.Data;
+import com.dto.InputData;
 import com.exception.DiagonalUnableException;
 
 
 public class DiagonalWorker {
 
-    public static void makeMatrixDiagonalPredominant(Data data) throws DiagonalUnableException {
+    public static void makeMatrixDiagonalPredominant(InputData data) throws DiagonalUnableException {
         if (checkIfMatrixIsDiagonal(data.getMatrix())) return;
 
         float[][] new_matrix = new float[data.getN()][];
@@ -21,7 +21,6 @@ public class DiagonalWorker {
                 }
 
             }
-            System.out.println(max_i + " " + max_a);
             if (new_matrix[max_i] != null) {
                 throw new DiagonalUnableException("Unable to convert matrix to diagonal");
             }

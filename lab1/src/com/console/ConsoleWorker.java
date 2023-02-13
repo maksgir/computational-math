@@ -1,7 +1,7 @@
 package com.console;
 
 import com.DataWorker;
-import com.dto.Data;
+import com.dto.InputData;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -15,13 +15,13 @@ public class ConsoleWorker implements DataWorker {
     private Scanner in = new Scanner(System.in);
 
     @Override
-    public Data readData() {
+    public InputData readData() {
 
         readN();
         readE();
         readMatrix();
 
-        return new Data(n, e, matrix);
+        return new InputData(n, e, matrix);
     }
 
     private void readN() {

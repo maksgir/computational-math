@@ -1,8 +1,7 @@
 package com;
 
-import com.dto.Data;
-import com.exception.WrongFileDataFormat;
+import com.dto.InputData;
 
 public interface DataWorker {
-    Data readData() throws Exception;
+    InputData readData() throws Exception;
 }

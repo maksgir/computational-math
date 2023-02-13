@@ -1,12 +1,12 @@
 package com.dto;
 
-public class Data {
+public class InputData {
     private Integer n;
     private Float e;
 
     private float[][] matrix;
 
-    public Data(Integer n, Float e, float[][] matrix) {
+    public InputData(Integer n, Float e, float[][] matrix) {
         this.n = n;
         this.e = e;
         this.matrix = matrix;
