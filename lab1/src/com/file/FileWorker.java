@@ -2,6 +2,7 @@ package com.file;
 
 import com.DataWorker;
 import com.dto.Data;
+import com.exception.WrongFileDataFormat;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -21,7 +22,7 @@ public class FileWorker implements DataWorker {
     }
 
     @Override
-    public Data readData() {
+    public Data readData() throws Exception {
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
 
@@ -30,7 +31,7 @@ public class FileWorker implements DataWorker {
             readE(reader);
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw new Exception(e.getMessage());
         }
 
         return new Data(n, e, matrix);
@@ -54,8 +55,8 @@ public class FileWorker implements DataWorker {
         for (int i = 0; i < n; i++) {
             String line = reader.readLine();
             String[] splitted = line.split(" ");
-            if (splitted.length != (n + 1)){
-                throw new Exception("Smth wrong with matrix");
+            if (splitted.length != (n + 1)) {
+                throw new WrongFileDataFormat("Wrong count of params in line: " + line + "\n expected - " + (n + 1) + ", given - " + splitted.length);
             }
             for (int j = 0; j < splitted.length; j++) {
                 matrix[i][j] = Float.parseFloat(splitted[j]);
