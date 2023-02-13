@@ -2,6 +2,7 @@ package com.console;
 
 import com.DataWorker;
 import com.dto.InputData;
+import com.exception.WrongFileDataFormat;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -68,7 +69,7 @@ public class ConsoleWorker implements DataWorker {
 
                     String[] splitted = line.split(" ");
                     if (splitted.length != (n + 1)) {
-                        throw new Exception("Smth wrong with matrix");
+                        throw new WrongFileDataFormat("Wrong count of params \nexpected - " + (n + 1) + ", given - " + splitted.length);
                     }
 
                     for (int j = 0; j < splitted.length; j++) {

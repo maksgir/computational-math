@@ -30,15 +30,13 @@ public class Counter {
 
         countSupportingMatrix();
 
-        int iteration = 0;
-
         answer = new Answer(n);
         answer.setLastLine(dMatrix);
-        answer.setIteration(iteration);
+        answer.setIteration(0);
 
         do {
-            iteration++;
-            countVariable(iteration);
+            answer.incrementIteration();
+            countVariable(answer.getIteration());
         } while (answer.getAccuracy() > epsilon);
 
         return answer;

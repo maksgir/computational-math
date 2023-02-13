@@ -10,10 +10,11 @@ import com.math.DiagonalWorker;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.Scanner;
 
 
-//   src/com/file/ok.txt
+//
 public class Main {
 
     private static Scanner in = new Scanner(System.in);
@@ -31,6 +32,7 @@ public class Main {
             Counter counter = new Counter(data);
 
             Answer answer = counter.countDecision();
+            printAnswer(answer);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -38,8 +40,13 @@ public class Main {
 
     }
 
-    private static void printAnswer(Answer answer){
+    private static void printAnswer(Answer answer) {
+        answer.round();
 
+        System.out.print("\nAnswer - ");
+        System.out.println(Arrays.toString(answer.getLastLine()));
+        System.out.println("Accuracy - " + answer.getAccuracy());
+        System.out.println("Iteration produced - " + answer.getIteration());
     }
 
     private static DataWorker getInfoInputWay() {

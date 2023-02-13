@@ -11,6 +11,12 @@ public class Answer {
         this.lastLine = new float[n];
     }
 
+    public void round() {
+        for (int i = 0; i < lastLine.length; i++) {
+            lastLine[i] = Math.round(lastLine[i]);
+        }
+    }
+
     public float[] getLastLine() {
         return lastLine;
     }
@@ -25,6 +31,10 @@ public class Answer {
 
     public void setAccuracy(float accuracy) {
         this.accuracy = accuracy;
+    }
+
+    public void incrementIteration() {
+        iteration++;
     }
 
     public int getIteration() {
