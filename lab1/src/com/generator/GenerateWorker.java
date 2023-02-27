@@ -1,13 +1,14 @@
-package com.console;
+package com.generator;
 
 import com.DataWorker;
 import com.dto.InputData;
-import com.exception.WrongFileDataFormat;
 
+import javax.xml.crypto.Data;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class ConsoleWorker implements DataWorker {
+public class GenerateWorker implements DataWorker {
+
     private Integer n;
     private Float e;
 
@@ -15,14 +16,16 @@ public class ConsoleWorker implements DataWorker {
 
     private Scanner in = new Scanner(System.in);
 
+
+
     @Override
     public InputData readData() {
-
         readN();
         readE();
-        readMatrix();
+        generateMatrix();
 
-        return new InputData(n, e, matrix);
+
+        return new InputData(n,e,matrix);
     }
 
     private void readN() {
@@ -63,40 +66,21 @@ public class ConsoleWorker implements DataWorker {
 
     }
 
-    private void readMatrix() {
-        matrix = new float[n][n + 1];
+    private void generateMatrix() {
+        this.matrix = new float[n][n + 1];
+        int maxik;
+
 
         for (int i = 0; i < n; i++) {
-            boolean flag = false;
             do {
-                remind(i + 1, n);
-                try {
-                    String line = in.nextLine();
-
-                    String[] splitted = line.split(" ");
-                    if (splitted.length != (n + 1)) {
-                        throw new WrongFileDataFormat("Wrong count of params \nexpected - " + (n + 1) + ", given - " + splitted.length);
-                    }
-
-                    for (int j = 0; j < splitted.length; j++) {
-                        matrix[i][j] = Float.parseFloat(splitted[j]);
-                    }
-                    flag = true;
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
-                    ;
-                }
-            } while (!flag);
-
+                maxik = (int) (Math.random() * n*10);
+            } while (maxik < n*8);
+            for (int j = 0; j < n; j++) {
+                matrix[i][j] = (int) (Math.random() * ((maxik * 2)/n - 1)) - ((maxik/n) - 1);
+            }
+            matrix[i][i] = maxik;
+            matrix[i][n] = (int) (Math.random() * (200 - 1)) - (100);
         }
 
-        System.out.println("Считал матрицу");
-        System.out.println(Arrays.deepToString(matrix));
-
-    }
-
-    private void remind(int i, int n) {
-        System.out.println("Enter matrix line like :");
-        System.out.println("A" + i + ":1 A" + i + ":2 ... A" + i + ":" + n + " d" + i);
     }
 }

@@ -37,15 +37,22 @@ public class FileWorker implements DataWorker {
         return new InputData(n, e, matrix);
     }
 
-    private void readN(BufferedReader reader) throws IOException {
+    private void readN(BufferedReader reader) throws IOException, WrongFileDataFormat {
 
         String line = reader.readLine();
         n = Integer.parseInt(line);
+        if (n > 20){
+            throw new WrongFileDataFormat("N should be <= 20");
+        }
     }
 
-    private void readE(BufferedReader reader) throws IOException {
+    private void readE(BufferedReader reader) throws IOException, WrongFileDataFormat {
         String line = reader.readLine();
         e = Float.parseFloat(line);
+
+        if (e <=0){
+            throw new WrongFileDataFormat("E should be > 0");
+        }
     }
 
     private void readMatrix(BufferedReader reader) throws Exception {

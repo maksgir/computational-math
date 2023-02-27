@@ -3,6 +3,8 @@ package com.math;
 import com.dto.InputData;
 import com.exception.DiagonalUnableException;
 
+import java.util.Arrays;
+
 
 public class DiagonalWorker {
 
@@ -22,6 +24,7 @@ public class DiagonalWorker {
 
             }
             if (new_matrix[max_i] != null) {
+                System.out.println(Arrays.toString(line));
                 throw new DiagonalUnableException("Unable to convert matrix to diagonal");
             }
 
@@ -54,6 +57,9 @@ public class DiagonalWorker {
 
 
             if (Math.abs(diagElem) < sum) {
+                System.out.println(Math.abs(diagElem));
+                System.out.println(sum);
+                System.out.println(i);
                 return false;
             } else if (Math.abs(diagElem) == sum) {
                 numOfEquals++;
