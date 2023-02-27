@@ -4,7 +4,6 @@ import com.maksgir.lab2.dto.Interval;
 import com.maksgir.lab2.equation.QuadraticEquation;
 import com.maksgir.lab2.equation.ThirdDegreeEquation;
 import com.maksgir.lab2.equation.TranscendentalEquation;
-import com.maksgir.lab2.enums.Method;
 
 import java.util.List;
 
@@ -20,9 +19,9 @@ public class Messages {
     public static void chooseEquationMethodMessage() {
 
         System.out.println("Выберите метод, которым будем его решать: ");
-        System.out.println("\t1. " + Method.HALF_DIVISION);
-        System.out.println("\t2. " + Method.SECANT);
-        System.out.println("\t3. " + Method.SIMPLE_ITERATION);
+        System.out.println("\t1. Метод половинного деления");
+        System.out.println("\t2. Метод секущих");
+        System.out.println("\t3. Метод простой итерации");
     }
 
     public static void chooseEpsilonMessage() {

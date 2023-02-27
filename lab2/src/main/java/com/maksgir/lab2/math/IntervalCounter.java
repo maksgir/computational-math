@@ -13,8 +13,8 @@ public class IntervalCounter {
         List<Interval> answer = new ArrayList<>();
 
         for (double i = bigInterval.getA() + 0.5; i < bigInterval.getB(); i += 0.5) {
-            double left = equation.solve(i - 0.5);
-            double right = equation.solve(i);
+            double left = equation.f(i - 0.5);
+            double right = equation.f(i);
             if (left * right <= 0) {
                 answer.add(new Interval(i-0.5, i));
             }

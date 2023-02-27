@@ -7,7 +7,7 @@ public class QuadraticEquation implements Equation {
 
 
     @Override
-    public double solve(double x) {
+    public double f(double x) {
         return x * x - 8 * x + 9;
     }
 }

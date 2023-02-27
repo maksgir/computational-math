@@ -8,7 +8,7 @@ public class TranscendentalEquation implements Equation {
     public static String equation = "sin(2x) + cos(x) = 0";
 
     @Override
-    public double solve(double x) {
+    public double f(double x) {
         return Math.sin(2 * x) + Math.cos(x);
     }
 }

@@ -38,7 +38,7 @@ public class Main {
         IntervalCounter iCounter = new IntervalCounter();
 
         Equation equation = chooseEquation();
-        SolutionMethod method = chooseMethod();
+
 
         DataWorker dataWorker = chooseDataWorker(equation);
 
@@ -65,7 +65,12 @@ public class Main {
 
         double epsilon = chooseEpsilon();
 
+        SolutionMethod method = chooseMethod();
+
         Answer answer = method.solveEquation(equation, interval, epsilon);
+
+        System.out.println(answer);
+
 
 
     }

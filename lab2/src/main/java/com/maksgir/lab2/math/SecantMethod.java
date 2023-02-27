@@ -7,6 +7,6 @@ import com.maksgir.lab2.equation.Equation;
 public class SecantMethod implements SolutionMethod {
     @Override
     public Answer solveEquation(Equation equation, Interval interval, double epsilon) {
-
+        return null;
     }
 }
