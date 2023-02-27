@@ -11,4 +11,9 @@ public class TranscendentalEquation implements Equation {
     public double f(double x) {
         return Math.sin(2 * x) + Math.cos(x);
     }
+
+    @Override
+    public double fDerivative(double x) {
+        return 2 * Math.cos(2 * x) - Math.sin(x);
+    }
 }

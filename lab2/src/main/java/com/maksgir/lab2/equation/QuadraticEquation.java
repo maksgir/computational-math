@@ -10,4 +10,9 @@ public class QuadraticEquation implements Equation {
     public double f(double x) {
         return x * x - 8 * x + 9;
     }
+
+    @Override
+    public double fDerivative(double x) {
+        return 2 * x - 8;
+    }
 }

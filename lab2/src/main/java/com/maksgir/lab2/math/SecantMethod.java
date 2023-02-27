@@ -9,7 +9,7 @@ public class SecantMethod implements SolutionMethod {
     public Answer solveEquation(Equation equation, Interval interval, double epsilon) {
 
         double x0 = interval.getA();
-        double x1 = interval.getB();
+        double x1 = x0 + 0.03;
         int i = 0;
         double x2 = 0;
 
