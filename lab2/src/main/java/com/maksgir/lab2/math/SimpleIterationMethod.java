@@ -1,15 +1,16 @@
 package com.maksgir.lab2.math;
 
 import com.maksgir.lab2.dto.AnswerEquation;
-import com.maksgir.lab2.dto.Interval;
+import com.maksgir.lab2.dto.InputData;
 import com.maksgir.lab2.equation.Equation;
 
 public class SimpleIterationMethod implements EquationSolutionMethod {
     @Override
-    public AnswerEquation solveEquation(Equation equation, Interval interval, double epsilon) {
+    public AnswerEquation solveEquation(Equation equation, InputData interval) {
 
         double a = interval.getA();
         double b = interval.getB();
+        double epsilon = interval.getEpsilon();
 
         double aD = equation.fDerivative(a);
         double bD = equation.fDerivative(b);

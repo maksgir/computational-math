@@ -6,9 +6,9 @@ public class AnswerEquation {
     private double x;
     private int i;
     private Equation equation;
-    private Interval interval;
+    private InputData interval;
 
-    public AnswerEquation(double x, int i, Equation equation, Interval interval) {
+    public AnswerEquation(double x, int i, Equation equation, InputData interval) {
         this.x = x;
         this.i = i;
         this.equation = equation;
@@ -23,7 +23,7 @@ public class AnswerEquation {
         return equation;
     }
 
-    public Interval getInterval() {
+    public InputData getInterval() {
         return interval;
     }
 

@@ -1,15 +1,16 @@
 package com.maksgir.lab2.math;
 
 import com.maksgir.lab2.dto.AnswerEquation;
-import com.maksgir.lab2.dto.Interval;
+import com.maksgir.lab2.dto.InputData;
 import com.maksgir.lab2.equation.Equation;
 
 public class HalfDivisionMethod implements EquationSolutionMethod {
     @Override
-    public AnswerEquation solveEquation(Equation equation, Interval interval, double epsilon) {
+    public AnswerEquation solveEquation(Equation equation, InputData interval) {
         double a = interval.getA();
         double b = interval.getB();
         double x = 0;
+        double epsilon = interval.getEpsilon();
 
         int i = 0;
         do {

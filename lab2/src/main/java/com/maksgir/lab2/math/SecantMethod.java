@@ -1,17 +1,18 @@
 package com.maksgir.lab2.math;
 
 import com.maksgir.lab2.dto.AnswerEquation;
-import com.maksgir.lab2.dto.Interval;
+import com.maksgir.lab2.dto.InputData;
 import com.maksgir.lab2.equation.Equation;
 
 public class SecantMethod implements EquationSolutionMethod {
     @Override
-    public AnswerEquation solveEquation(Equation equation, Interval interval, double epsilon) {
+    public AnswerEquation solveEquation(Equation equation, InputData interval) {
 
         double x0 = interval.getA();
         double x1 = x0 + 0.03;
         int i = 0;
         double x2 = 0;
+        double epsilon = interval.getEpsilon();
 
         do {
             i++;

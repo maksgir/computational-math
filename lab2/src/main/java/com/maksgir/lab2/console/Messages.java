@@ -1,6 +1,6 @@
 package com.maksgir.lab2.console;
 
-import com.maksgir.lab2.dto.Interval;
+import com.maksgir.lab2.dto.InputData;
 import com.maksgir.lab2.equation.QuadraticEquation;
 import com.maksgir.lab2.equation.ThirdDegreeEquation;
 import com.maksgir.lab2.equation.TranscendentalEquation;
@@ -15,6 +15,13 @@ public class Messages {
         System.out.println("Что будем решать: ");
         System.out.println("\t1. Уравнение");
         System.out.println("\t2. Система");
+    }
+
+    public static void chooseInputWayMessage() {
+
+        System.out.println("Как хотим ввести данные: ");
+        System.out.println("\t1. Сами");
+        System.out.println("\t2. Из файла");
     }
 
     public static void chooseEquationMessage() {
@@ -67,17 +74,17 @@ public class Messages {
         System.out.println("---------------------------");
     }
 
-    public static void showIntervalsMessage(List<Interval> intervals) {
+    public static void showIntervalsMessage(List<InputData> intervals) {
         System.out.println("На указанном интервале нашлось несколько корней");
         System.out.println("Давайте выберем какой из них будем определять точно");
         int a = 1;
-        for (Interval i : intervals) {
+        for (InputData i : intervals) {
             System.out.println("\t" + a + ": " + i);
             a++;
         }
     }
 
-    public static void showOnlyIntervalMessage(Interval interval) {
+    public static void showOnlyIntervalMessage(InputData interval) {
         System.out.println("На указанном интервале нашелся один корень: " + interval);
     }
 

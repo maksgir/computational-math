@@ -1,10 +1,11 @@
 package com.maksgir.lab2.dto;
 
-public class Interval {
+public class InputData {
     private double a;
     private double b;
+    private double epsilon;
 
-    public Interval(double a, double b) {
+    public InputData(double a, double b) {
         this.a = a;
         this.b = b;
     }
@@ -23,6 +24,14 @@ public class Interval {
 
     public void setB(double b) {
         this.b = b;
+    }
+
+    public double getEpsilon() {
+        return epsilon;
+    }
+
+    public void setEpsilon(double epsilon) {
+        this.epsilon = epsilon;
     }
 
     @Override
