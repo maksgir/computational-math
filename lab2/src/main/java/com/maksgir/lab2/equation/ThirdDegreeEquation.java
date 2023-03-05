@@ -14,4 +14,9 @@ public class ThirdDegreeEquation implements Equation {
     public double fDerivative(double x) {
         return 3 * x * x + 2 * 2.28 * x - 1.934;
     }
+
+    @Override
+    public String toString() {
+        return equation;
+    }
 }

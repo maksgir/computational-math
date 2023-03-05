@@ -30,6 +30,16 @@ public class FirstSystem implements SystemTask {
         je.add(secondLine);
     }
 
+    @Override
+    public double firstEquation(double x, double y) {
+        return Math.sqrt(4 - x * x);
+    }
+
+    @Override
+    public double secondEquation(double x, double y) {
+        return 3 * x * x;
+    }
+
     public List<List<BiFunction<Double, Double, Double>>> getJe() {
         return je;
     }

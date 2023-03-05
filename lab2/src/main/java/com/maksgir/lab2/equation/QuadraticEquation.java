@@ -15,4 +15,9 @@ public class QuadraticEquation implements Equation {
     public double fDerivative(double x) {
         return 2 * x - 8;
     }
+
+    @Override
+    public String toString() {
+        return equation;
+    }
 }

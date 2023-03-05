@@ -15,8 +15,13 @@ import com.maksgir.lab2.system.SystemTask;
 import org.math.plot.Plot2DPanel;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.geom.Point2D;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 
 public class Main {
 
@@ -26,7 +31,6 @@ public class Main {
 
         System.out.println("Стартуем");
 
-        show();
         try {
             proceed();
 
@@ -35,13 +39,11 @@ public class Main {
         }
 
 
-
-
     }
 
     private static void proceed() {
 
-        if (isEquation()){
+        if (isEquation()) {
             Equation equation = chooseEquation();
             proceedEquation(equation);
         } else {
@@ -84,6 +86,8 @@ public class Main {
         AnswerEquation answer = method.solveEquation(equation, interval, epsilon);
 
         System.out.println(answer);
+
+        showEquation(answer);
     }
 
     private static void proceedSystem(SystemTask system) {
@@ -99,9 +103,11 @@ public class Main {
 
         System.out.println(answer);
 
+        showSystem(answer);
+
     }
 
-    private static boolean isEquation(){
+    private static boolean isEquation() {
         String answer;
         do {
             Messages.chooseTaskMessage();
@@ -130,7 +136,7 @@ public class Main {
         };
     }
 
-    private static SystemTask chooseSystem(){
+    private static SystemTask chooseSystem() {
         String answer;
         do {
             Messages.chooseSystemMessage();
@@ -139,7 +145,7 @@ public class Main {
 
         } while (!(answer.equals("1") || answer.equals("2")));
 
-        return answer.equals("1")? new FirstSystem(): new SecondSystem();
+        return answer.equals("1") ? new FirstSystem() : new SecondSystem();
     }
 
     private static EquationSolutionMethod chooseMethod() {
@@ -243,20 +249,60 @@ public class Main {
         System.out.println("Больше так не делайте : " + e.getMessage());
     }
 
-    private static void show(){
-        double[] x = {0, 5, 7};
-        double[] y = {0, 3, 5};
+    private static void showEquation(AnswerEquation answer) {
 
         // create your PlotPanel (you can use it as a JPanel)
         Plot2DPanel plot = new Plot2DPanel();
 
-        // add a line plot to the PlotPanel
-        plot.addLinePlot("my plot", x, y);
+        addEquationOnGraph(plot, (Double x, Double y) -> answer.getEquation().f(x), answer.getInterval());
+
+//        Point2D point2D = new Point2D.Double(answer.getX(), 0);
 
         // put the PlotPanel in a JFrame, as a JPanel
-        JFrame frame = new JFrame("a plot panel");
+        JFrame frame = new JFrame("Ответ");
         frame.setSize(800, 600);
         frame.setContentPane(plot);
         frame.setVisible(true);
+    }
+
+    private static void showSystem(AnswerSystem answer) {
+
+        // create your PlotPanel (you can use it as a JPanel)
+        Plot2DPanel plot = new Plot2DPanel();
+
+
+//        Point2D point2D = new Point2D.Double(answer.getX(), 0);
+
+        addSystemOnGraph(plot, answer.getSystem(), new Interval(answer.getInterval().getA(), answer.getInterval().getB()));
+
+        // put the PlotPanel in a JFrame, as a JPanel
+        JFrame frame = new JFrame("Ответ");
+        frame.setSize(800, 600);
+        frame.setContentPane(plot);
+        frame.setVisible(true);
+    }
+
+    private static void addEquationOnGraph(Plot2DPanel plot, BiFunction<Double, Double, Double> f, Interval interval) {
+        double[] x = new double[30];
+        double[] y = new double[30];
+        double start = interval.getA() - 0.5;
+        for (int i = 0; i < 30; i++) {
+            x[i] = start;
+            y[i] = f.apply(start, 0d);
+            start += 0.05;
+        }
+
+        plot.addLinePlot("", Color.BLUE, x, y);
+
+        double[] x0 = {interval.getA() - 2, 0};
+        double[] y0 = {interval.getB() + 2, 0};
+        plot.addLinePlot("y=0", Color.DARK_GRAY, x0, y0);
+
+
+    }
+
+    private static void addSystemOnGraph(Plot2DPanel plot, SystemTask system, Interval interval) {
+        addEquationOnGraph(plot, system::firstEquation, interval);
+        addEquationOnGraph(plot, system::secondEquation, interval);
     }
 }

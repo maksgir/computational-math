@@ -31,8 +31,19 @@ public class SecondSystem implements SystemTask {
     }
 
     @Override
+    public double firstEquation(double x, double y) {
+        return 1 - Math.sin(x);
+    }
+
+    @Override
+    public double secondEquation(double x, double y) {
+        return (-2 * x * x * x + 5) / 4;
+    }
+
+    @Override
     public List<List<BiFunction<Double, Double, Double>>> getJe() {
         return je;
     }
+
 
 }

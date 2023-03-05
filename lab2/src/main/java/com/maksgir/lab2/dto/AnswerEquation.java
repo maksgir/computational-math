@@ -6,11 +6,25 @@ public class AnswerEquation {
     private double x;
     private int i;
     private Equation equation;
+    private Interval interval;
 
-    public AnswerEquation(double x, int i, Equation equation) {
+    public AnswerEquation(double x, int i, Equation equation, Interval interval) {
         this.x = x;
         this.i = i;
         this.equation = equation;
+        this.interval = interval;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public Equation getEquation() {
+        return equation;
+    }
+
+    public Interval getInterval() {
+        return interval;
     }
 
     @Override

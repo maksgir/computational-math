@@ -35,7 +35,7 @@ public class SimpleIterationMethod implements EquationSolutionMethod {
             x1 = x2;
         } while (true);
 
-        return new AnswerEquation(x1, i, equation);
+        return new AnswerEquation(x1, i, equation, interval);
     }
 
     private double fi(double x, Equation equation, double lambda) {

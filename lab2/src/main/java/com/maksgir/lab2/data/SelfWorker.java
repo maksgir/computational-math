@@ -13,6 +13,6 @@ public class SelfWorker implements DataWorker {
 
     @Override
     public BigInterval readInterval() {
-        return new BigInterval(-100, 100);
+        return new BigInterval(-10, 10);
     }
 }

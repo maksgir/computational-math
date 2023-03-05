@@ -52,7 +52,7 @@ public class SimpleIterationSystemMethod implements SystemSolutionMethod {
         } while (true);
 
 
-        return new AnswerSystem(x1, y1, it, system);
+        return new AnswerSystem(x1, y1, it, system, interval);
     }
 
 }
