@@ -27,6 +27,6 @@ public class SecantMethod implements EquationSolutionMethod {
 
         } while (true);
 
-        return new AnswerEquation(x2, i);
+        return new AnswerEquation(x2, i, equation);
     }
 }

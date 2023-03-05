@@ -12,7 +12,9 @@ import com.maksgir.lab2.math.*;
 import com.maksgir.lab2.system.FirstSystem;
 import com.maksgir.lab2.system.SecondSystem;
 import com.maksgir.lab2.system.SystemTask;
+import org.math.plot.Plot2DPanel;
 
+import javax.swing.*;
 import java.util.List;
 import java.util.Scanner;
 
@@ -24,12 +26,15 @@ public class Main {
 
         System.out.println("Стартуем");
 
+        show();
         try {
             proceed();
 
         } catch (Exception e) {
             endWithException(e);
         }
+
+
 
 
     }
@@ -236,5 +241,22 @@ public class Main {
 
     private static void endWithException(Exception e) {
         System.out.println("Больше так не делайте : " + e.getMessage());
+    }
+
+    private static void show(){
+        double[] x = {0, 5, 7};
+        double[] y = {0, 3, 5};
+
+        // create your PlotPanel (you can use it as a JPanel)
+        Plot2DPanel plot = new Plot2DPanel();
+
+        // add a line plot to the PlotPanel
+        plot.addLinePlot("my plot", x, y);
+
+        // put the PlotPanel in a JFrame, as a JPanel
+        JFrame frame = new JFrame("a plot panel");
+        frame.setSize(800, 600);
+        frame.setContentPane(plot);
+        frame.setVisible(true);
     }
 }

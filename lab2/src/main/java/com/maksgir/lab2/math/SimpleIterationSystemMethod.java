@@ -6,7 +6,6 @@ import com.maksgir.lab2.dto.BigInterval;
 import com.maksgir.lab2.system.SystemTask;
 
 import java.util.List;
-import java.util.Scanner;
 import java.util.function.BiFunction;
 
 public class SimpleIterationSystemMethod implements SystemSolutionMethod {
@@ -53,7 +52,7 @@ public class SimpleIterationSystemMethod implements SystemSolutionMethod {
         } while (true);
 
 
-        return new AnswerSystem(x1, y1, it);
+        return new AnswerSystem(x1, y1, it, system);
     }
 
 }

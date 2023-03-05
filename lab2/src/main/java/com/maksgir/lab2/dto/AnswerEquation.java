@@ -1,28 +1,16 @@
 package com.maksgir.lab2.dto;
 
+import com.maksgir.lab2.equation.Equation;
+
 public class AnswerEquation {
     private double x;
     private int i;
+    private Equation equation;
 
-    public AnswerEquation(double x, int i) {
+    public AnswerEquation(double x, int i, Equation equation) {
         this.x = x;
         this.i = i;
-    }
-
-    public double getX() {
-        return x;
-    }
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public int getI() {
-        return i;
-    }
-
-    public void setI(int i) {
-        this.i = i;
+        this.equation = equation;
     }
 
     @Override

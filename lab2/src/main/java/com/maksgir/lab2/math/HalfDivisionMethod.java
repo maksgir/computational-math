@@ -23,7 +23,7 @@ public class HalfDivisionMethod implements EquationSolutionMethod {
             }
         } while (!(Math.abs(a - b) <= epsilon) || !(Math.abs(equation.f(x)) < epsilon));
 
-        return new AnswerEquation(x, i);
+        return new AnswerEquation(x, i, equation);
 
     }
 }

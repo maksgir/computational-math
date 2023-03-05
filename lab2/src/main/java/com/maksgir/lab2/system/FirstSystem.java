@@ -34,7 +34,4 @@ public class FirstSystem implements SystemTask {
         return je;
     }
 
-    public void setJe(List<List<BiFunction<Double, Double, Double>>> je) {
-        this.je = je;
-    }
 }

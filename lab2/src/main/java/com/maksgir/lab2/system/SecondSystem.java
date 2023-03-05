@@ -35,8 +35,4 @@ public class SecondSystem implements SystemTask {
         return je;
     }
 
-    @Override
-    public void setJe(List<List<BiFunction<Double, Double, Double>>> je) {
-        this.je = je;
-    }
 }
