@@ -10,6 +10,12 @@ public class InputData {
         this.b = b;
     }
 
+    public InputData(double a, double b, double epsilon) {
+        this.a = a;
+        this.b = b;
+        this.epsilon = epsilon;
+    }
+
     public double getA() {
         return a;
     }

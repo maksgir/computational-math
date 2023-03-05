@@ -9,6 +9,7 @@ import com.maksgir.lab2.dto.BigInterval;
 import com.maksgir.lab2.dto.InputData;
 import com.maksgir.lab2.equation.*;
 import com.maksgir.lab2.exception.NoSolutionFoundException;
+import com.maksgir.lab2.file.FileWorker;
 import com.maksgir.lab2.graphic.GraphicWorker;
 import com.maksgir.lab2.math.*;
 import com.maksgir.lab2.system.SystemTask;
@@ -31,7 +32,7 @@ public class Main {
 
     }
 
-    private static void proceed() {
+    private static void proceed() throws Exception {
 
         if (ConsoleWorker.isEquation()) {
             Equation equation = ConsoleWorker.chooseEquation();
@@ -43,15 +44,15 @@ public class Main {
 
     }
 
-    private static void proceedEquation(Equation equation) {
+    private static void proceedEquation(Equation equation) throws Exception {
 
         IntervalCounter iCounter = new IntervalCounter();
-        DataWorker dataWorker = ConsoleWorker.chooseDataWorker(equation);
+
 
         InputData data = null;
 
-        if (ConsoleWorker.inputDataWayIsConsole()){
-
+        if (ConsoleWorker.inputDataWayIsConsole()) {
+            DataWorker dataWorker = ConsoleWorker.chooseDataWorker(equation);
             do {
                 BigInterval bigInterval = dataWorker.readInterval();
                 List<InputData> intervals = iCounter.countIntervals(equation, bigInterval);
@@ -68,10 +69,9 @@ public class Main {
             double epsilon = ConsoleWorker.chooseEpsilon();
             data.setEpsilon(epsilon);
         } else {
-
+            FileWorker fileWorker = new FileWorker();
+            data = fileWorker.readInputData();
         }
-
-
 
         EquationSolutionMethod method = ConsoleWorker.chooseMethod();
 
