@@ -1,12 +1,12 @@
 package com.maksgir.lab2.math;
 
-import com.maksgir.lab2.dto.Answer;
+import com.maksgir.lab2.dto.AnswerEquation;
 import com.maksgir.lab2.dto.Interval;
 import com.maksgir.lab2.equation.Equation;
 
-public class SecantMethod implements SolutionMethod {
+public class SecantMethod implements EquationSolutionMethod {
     @Override
-    public Answer solveEquation(Equation equation, Interval interval, double epsilon) {
+    public AnswerEquation solveEquation(Equation equation, Interval interval, double epsilon) {
 
         double x0 = interval.getA();
         double x1 = x0 + 0.03;
@@ -27,6 +27,6 @@ public class SecantMethod implements SolutionMethod {
 
         } while (true);
 
-        return new Answer(x2, i);
+        return new AnswerEquation(x2, i);
     }
 }

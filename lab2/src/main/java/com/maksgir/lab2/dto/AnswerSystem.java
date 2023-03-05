@@ -1,11 +1,13 @@
 package com.maksgir.lab2.dto;
 
-public class Answer {
+public class AnswerSystem {
     private double x;
+    private double y;
     private int i;
 
-    public Answer(double x, int i) {
+    public AnswerSystem(double x, double y, int i) {
         this.x = x;
+        this.y = y;
         this.i = i;
     }
 
@@ -15,6 +17,14 @@ public class Answer {
 
     public void setX(double x) {
         this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
     }
 
     public int getI() {
@@ -28,7 +38,8 @@ public class Answer {
     @Override
     public String toString() {
         return "Ответ: " +
-                "x=" + x +
+                "x=" + x + ", " +
+                "y=" + y +
                 ", был получен за " + i +
                 " итераций";
     }

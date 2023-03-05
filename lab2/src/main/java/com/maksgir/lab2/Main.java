@@ -2,15 +2,16 @@ package com.maksgir.lab2;
 
 import com.maksgir.lab2.console.Messages;
 import com.maksgir.lab2.data.*;
-import com.maksgir.lab2.dto.Answer;
+import com.maksgir.lab2.dto.AnswerEquation;
+import com.maksgir.lab2.dto.AnswerSystem;
 import com.maksgir.lab2.dto.BigInterval;
 import com.maksgir.lab2.dto.Interval;
-import com.maksgir.lab2.equation.Equation;
-import com.maksgir.lab2.equation.QuadraticEquation;
-import com.maksgir.lab2.equation.ThirdDegreeEquation;
-import com.maksgir.lab2.equation.TranscendentalEquation;
+import com.maksgir.lab2.equation.*;
 import com.maksgir.lab2.exception.NoSolutionFoundException;
 import com.maksgir.lab2.math.*;
+import com.maksgir.lab2.system.FirstSystem;
+import com.maksgir.lab2.system.SecondSystem;
+import com.maksgir.lab2.system.SystemTask;
 
 import java.util.List;
 import java.util.Scanner;
@@ -35,11 +36,19 @@ public class Main {
 
     private static void proceed() {
 
+        if (isEquation()){
+            Equation equation = chooseEquation();
+            proceedEquation(equation);
+        } else {
+            SystemTask system = chooseSystem();
+            proceedSystem(system);
+        }
+
+    }
+
+    private static void proceedEquation(Equation equation) {
+
         IntervalCounter iCounter = new IntervalCounter();
-
-        Equation equation = chooseEquation();
-
-
         DataWorker dataWorker = chooseDataWorker(equation);
 
         Interval interval;
@@ -65,16 +74,39 @@ public class Main {
 
         double epsilon = chooseEpsilon();
 
-        SolutionMethod method = chooseMethod();
+        EquationSolutionMethod method = chooseMethod();
 
-        Answer answer = method.solveEquation(equation, interval, epsilon);
+        AnswerEquation answer = method.solveEquation(equation, interval, epsilon);
+
+        System.out.println(answer);
+    }
+
+    private static void proceedSystem(SystemTask system) {
+
+        Messages.initialApproximationMessage();
+        UserInputWorker dataWorker = new UserInputWorker();
+
+        BigInterval interval = dataWorker.readInterval();
+
+        SystemSolutionMethod solutionMethod = new SimpleIterationSystemMethod();
+
+        AnswerSystem answer = solutionMethod.proceed(interval, system);
 
         System.out.println(answer);
 
-
-
     }
 
+    private static boolean isEquation(){
+        String answer;
+        do {
+            Messages.chooseTaskMessage();
+
+            answer = in.nextLine().trim();
+
+        } while (!(answer.equals("1") || answer.equals("2")));
+
+        return answer.equals("1");
+    }
 
     private static Equation chooseEquation() {
 
@@ -93,7 +125,19 @@ public class Main {
         };
     }
 
-    private static SolutionMethod chooseMethod() {
+    private static SystemTask chooseSystem(){
+        String answer;
+        do {
+            Messages.chooseSystemMessage();
+
+            answer = in.nextLine().trim();
+
+        } while (!(answer.equals("1") || answer.equals("2")));
+
+        return answer.equals("1")? new FirstSystem(): new SecondSystem();
+    }
+
+    private static EquationSolutionMethod chooseMethod() {
         String answer;
         do {
             Messages.chooseEquationMethodMessage();
@@ -121,7 +165,6 @@ public class Main {
 
         return answer.equals("1") ? new UserInputWorker() : new SelfWorker(equation);
 
-
     }
 
     private static Interval chooseInterval(List<Interval> intervals) throws NoSolutionFoundException {
@@ -131,13 +174,13 @@ public class Main {
         }
 
         if (intervals.size() == 1) {
-            Messages.showOnlyInterval(intervals.get(0));
+            Messages.showOnlyIntervalMessage(intervals.get(0));
             return intervals.get(0);
         }
 
         Integer n = null;
         do {
-            Messages.showIntervals(intervals);
+            Messages.showIntervalsMessage(intervals);
             String line = in.nextLine();
             try {
 

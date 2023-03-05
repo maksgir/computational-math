@@ -1,12 +1,12 @@
 package com.maksgir.lab2.math;
 
-import com.maksgir.lab2.dto.Answer;
+import com.maksgir.lab2.dto.AnswerEquation;
 import com.maksgir.lab2.dto.Interval;
 import com.maksgir.lab2.equation.Equation;
 
-public class SimpleIterationMethod implements SolutionMethod {
+public class SimpleIterationMethod implements EquationSolutionMethod {
     @Override
-    public Answer solveEquation(Equation equation, Interval interval, double epsilon) {
+    public AnswerEquation solveEquation(Equation equation, Interval interval, double epsilon) {
 
         double a = interval.getA();
         double b = interval.getB();
@@ -35,7 +35,7 @@ public class SimpleIterationMethod implements SolutionMethod {
             x1 = x2;
         } while (true);
 
-        return new Answer(x1, i);
+        return new AnswerEquation(x1, i);
     }
 
     private double fi(double x, Equation equation, double lambda) {
