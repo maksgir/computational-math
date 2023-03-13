@@ -89,7 +89,7 @@ public class Main {
 
         BigInterval interval = dataWorker.readInterval();
 
-        SystemSolutionMethod solutionMethod = new SimpleIterationSystemMethod();
+        SystemSolutionMethod solutionMethod = new NewtonSystemMethod();
 
         AnswerSystem answer = solutionMethod.proceed(interval, system);
 

@@ -8,7 +8,7 @@ import com.maksgir.lab2.system.SystemTask;
 import java.util.List;
 import java.util.function.BiFunction;
 
-public class SimpleIterationSystemMethod implements SystemSolutionMethod {
+public class NewtonSystemMethod implements SystemSolutionMethod {
 
     @Override
     public AnswerSystem proceed(BigInterval interval, SystemTask system) {
