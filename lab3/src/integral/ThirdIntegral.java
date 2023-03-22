@@ -3,9 +3,7 @@ package integral;
 
 public class ThirdIntegral extends IntegralAbstract{
 
-    public ThirdIntegral(double a, double b, int n) {
-        super(a, b, n);
-    }
+    public static String fName = "third....";
 
     @Override
     public Double func(Double x) {

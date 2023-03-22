@@ -1,17 +1,19 @@
 package integral;
 
 
+import dto.InputData;
+
 public abstract class IntegralAbstract {
 
-    protected double a;
-    protected double b;
-    protected int n;
-
-    public IntegralAbstract(double a, double b, int n) {
-        this.a = a;
-        this.b = b;
-        this.n = n;
-    }
+    protected InputData data;
 
     public abstract Double func(Double x);
+
+    public InputData getData() {
+        return data;
+    }
+
+    public void setData(InputData data) {
+        this.data = data;
+    }
 }

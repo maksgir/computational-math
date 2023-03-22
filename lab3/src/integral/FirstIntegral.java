@@ -1,11 +1,7 @@
 package integral;
 
 public class FirstIntegral extends IntegralAbstract {
-
-
-    public FirstIntegral(double a, double b, int n) {
-        super(a, b, n);
-    }
+    public static String fName = "4x^3 + -5x^2 + 6x - 7";
 
     @Override
     public Double func(Double x) {
