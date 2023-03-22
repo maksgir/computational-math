@@ -19,7 +19,6 @@ public class SecantMethod implements EquationSolutionMethod {
             x2 = x1 - ((x1 - x0) / (equation.f(x1) - equation.f(x0)) * equation.f(x1));
 
             double m = Math.abs(x2 - x1);
-            System.out.println(x0 + " " + x1 + " " + x2);
             if (m <= epsilon) {
                 break;
             }

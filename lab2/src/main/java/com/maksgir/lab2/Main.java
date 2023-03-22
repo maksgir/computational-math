@@ -14,7 +14,9 @@ import com.maksgir.lab2.graphic.GraphicWorker;
 import com.maksgir.lab2.math.*;
 import com.maksgir.lab2.system.SystemTask;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 
 public class Main {
 
@@ -22,12 +24,20 @@ public class Main {
 
         System.out.println("Стартуем");
 
-        try {
-            proceed();
+//        try {
+////            proceed();
+//
+//        } catch (Exception e) {
+//            ConsoleWorker.endWithException(e);
+//        }
 
-        } catch (Exception e) {
-            ConsoleWorker.endWithException(e);
-        }
+        int[] array = {1, 2, 3, 4};
+        Function<Integer, Integer> func = (x) -> x * x;
+
+        System.out.println(Arrays.toString(array));
+        array = Arrays.stream(array).map(func::apply).toArray();
+
+        System.out.println(Arrays.toString(array));
 
 
     }

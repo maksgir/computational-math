@@ -9,7 +9,7 @@ public class HalfDivisionMethod implements EquationSolutionMethod {
     public AnswerEquation solveEquation(Equation equation, InputData interval) {
         double a = interval.getA();
         double b = interval.getB();
-        double x = 0;
+        double x ;
         double epsilon = interval.getEpsilon();
 
         int i = 0;
@@ -28,3 +28,7 @@ public class HalfDivisionMethod implements EquationSolutionMethod {
 
     }
 }
+
+
+
+
