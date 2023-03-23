@@ -20,8 +20,8 @@ public class Messages {
         System.out.println("Введите правый промежуток (разница с левым не больше 10)");
     }
 
-    public static void inputN(){
-        System.out.println("Введите количество разбиений интервала (больше 2)");
+    public static void inputE(){
+        System.out.println("Введите погрешность (больше 0, меньше 1)");
     }
 
     public static void inputError(){

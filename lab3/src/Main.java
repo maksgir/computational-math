@@ -9,6 +9,9 @@ public class Main {
 
         IntegralAbstract integral = cWorker.readIntegral();
         InputData data = cWorker.readInputData();
-        Method method = cWorker
+        integral.setData(data);
+
+        Method method = cWorker.readMethod();
+
     }
 }

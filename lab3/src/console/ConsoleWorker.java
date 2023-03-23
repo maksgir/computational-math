@@ -5,6 +5,7 @@ import integral.FirstIntegral;
 import integral.IntegralAbstract;
 import integral.SecondIntegral;
 import integral.ThirdIntegral;
+import methods.*;
 
 
 import java.util.Scanner;
@@ -39,17 +40,17 @@ public class ConsoleWorker {
                 x -> (x >= -100) && (x <= 100) && (Math.abs(x - a) <= 10) && (x > a),
                 Messages::inputError);
 
-        int n = (int) readNumber(
-                Messages::inputN,
-                x -> (x > 2),
+        double e = readNumber(
+                Messages::inputE,
+                x -> (x > 0) && (x < 1),
                 Messages::inputError);
 
-        return new InputData(a, b, n);
+        return new InputData(a, b, e);
 
 
     }
 
-    public IntegralAbstract readMethod() {
+    public Method readMethod() {
         String answer;
         do {
             Messages.chooseIntegral();
@@ -58,11 +59,28 @@ public class ConsoleWorker {
 
         } while (!(answer.equals("1") || answer.equals("2") || answer.equals("3")));
 
-        if ()
+        if (answer.equals("1")) {
+            return readRectangleMethod();
+        }
+        if (answer.equals("2")) {
+            return new TrapezoidalMethod();
+        }
+        return new SimpsonMethod();
+    }
+
+    public RectangleAbstract readRectangleMethod() {
+        String answer;
+        do {
+            Messages.chooseIntegral();
+
+            answer = in.nextLine().trim();
+
+        } while (!(answer.equals("1") || answer.equals("2") || answer.equals("3")));
+
         return switch (answer) {
-            case "2" -> new FirstIntegral();
-            case "3" -> new SecondIntegral();
-            default -> new ThirdIntegral();
+            case "2" -> new MediumRectangle();
+            case "3" -> new RightRectangle();
+            default -> new LeftRectangle();
         };
     }
 
@@ -75,12 +93,12 @@ public class ConsoleWorker {
             try {
 
                 n = Double.parseDouble(line);
-                if (n <= 0 || n > 1) {
+                if (!predicate.test(n)) {
                     errorMessage.run();
                     n = null;
                 }
             } catch (Exception e) {
-                System.out.println("А теперь давайте число...");
+                System.out.println("А теперь давайте число");
                 errorMessage.run();
             }
         } while (n == null);

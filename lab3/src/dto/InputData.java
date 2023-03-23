@@ -3,12 +3,12 @@ package dto;
 public class InputData {
     private double a;
     private double b;
-    private int n;
+    private double e;
 
-    public InputData(double a, double b, int n) {
+    public InputData(double a, double b, double e) {
         this.a = a;
         this.b = b;
-        this.n = n;
+        this.e = e;
     }
 
     public double getA() {
@@ -19,7 +19,7 @@ public class InputData {
         return b;
     }
 
-    public int getN() {
-        return n;
+    public double getE() {
+        return e;
     }
 }
