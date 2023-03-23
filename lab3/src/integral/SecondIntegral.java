@@ -1,8 +1,6 @@
 package integral;
 
-import java.util.function.Function;
-
-public class SecondIntegral extends IntegralAbstract {
+public class SecondIntegral extends Integral {
     public static String fName = "second....";
 
     @Override

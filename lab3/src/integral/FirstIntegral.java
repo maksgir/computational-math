@@ -1,6 +1,6 @@
 package integral;
 
-public class FirstIntegral extends IntegralAbstract {
+public class FirstIntegral extends Integral {
     public static String fName = "4x^3 + -5x^2 + 6x - 7";
 
     @Override

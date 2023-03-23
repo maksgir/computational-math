@@ -1,7 +1,7 @@
 package integral;
 
 
-public class ThirdIntegral extends IntegralAbstract{
+public class ThirdIntegral extends Integral {
 
     public static String fName = "third....";
 

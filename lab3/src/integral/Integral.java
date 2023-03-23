@@ -3,7 +3,7 @@ package integral;
 
 import dto.InputData;
 
-public abstract class IntegralAbstract {
+public abstract class Integral {
 
     protected InputData data;
 

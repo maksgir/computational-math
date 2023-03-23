@@ -2,7 +2,7 @@ package console;
 
 import dto.InputData;
 import integral.FirstIntegral;
-import integral.IntegralAbstract;
+import integral.Integral;
 import integral.SecondIntegral;
 import integral.ThirdIntegral;
 import methods.*;
@@ -14,7 +14,7 @@ import java.util.function.Predicate;
 public class ConsoleWorker {
     private Scanner in = new Scanner(System.in);
 
-    public IntegralAbstract readIntegral() {
+    public Integral readIntegral() {
         String answer;
         do {
             Messages.chooseIntegral();
