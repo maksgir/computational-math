@@ -24,8 +24,9 @@ public abstract class Method {
         InputData data = integral.getData();
         int n = defaultN;
         double h;
-        double previous = 0;
+        double previous = Double.MAX_VALUE;
         double current;
+
         int it = 0;
 
         while (true) {
@@ -45,7 +46,6 @@ public abstract class Method {
             previous = current;
             n *= 2;
         }
-
 
         return new Answer(current, it);
     }

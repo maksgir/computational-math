@@ -20,14 +20,13 @@ public class SimpsonMethod extends Method {
                 n -> n + 1,
                 (y, n) -> {
                     double even = 0;
-                    for (int i = 1; i < y.length; i += 2) {
+                    for (int i = 1; i < y.length - 1; i += 2) {
                         even += y[i];
                     }
                     double odd = 0;
-                    for (int i = 2; i < y.length; i += 2) {
+                    for (int i = 2; i < y.length - 1; i += 2) {
                         odd += y[i];
                     }
-
                     return y[0] + y[n] + 4 * even + 2 * odd;
                 },
                 (h, s) -> h * s / 3,
