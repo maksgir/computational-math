@@ -3,10 +3,10 @@ package integral;
 
 public class ThirdIntegral extends Integral {
 
-    public static String fName = "third....";
+    public static String fName = "-x^3 - x^2 + x + 3";
 
     @Override
     public Double func(Double x) {
-        return null;
+        return -Math.pow(x, 3) - x * x + x + 3;
     }
 }
