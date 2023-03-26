@@ -26,9 +26,10 @@ public abstract class Method {
         double h;
         double previous = 0;
         double current;
-
+        int it = 0;
 
         while (true) {
+            it++;
             h = (data.getB() - data.getA()) / n;
             double[] y = new double[rangeForY.apply(n)];
 
@@ -37,6 +38,7 @@ public abstract class Method {
                 y[i] = integral.func(x);
             }
             current = functionForS.apply(y, n);
+            current = functionForAns.apply(h, current);
             if (countAccuracy(previous, current, k, data.getE())) {
                 break;
             }
@@ -44,12 +46,11 @@ public abstract class Method {
             n *= 2;
         }
 
-        double ans = functionForAns.apply(h, current);
 
-        return new Answer(ans, n);
+        return new Answer(current, it);
     }
 
     protected boolean countAccuracy(double I0, double I1, int k, double epsilon) {
-        return ((I0 - I1) / (Math.pow(2, k) - 1)) <= epsilon;
+        return (Math.abs((I0 - I1)) / (Math.pow(2, k) - 1)) <= epsilon;
     }
 }

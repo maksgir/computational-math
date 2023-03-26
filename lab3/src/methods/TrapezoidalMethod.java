@@ -7,6 +7,7 @@ import integral.Integral;
 import java.util.Arrays;
 
 public class TrapezoidalMethod extends Method {
+    public static String name = "Метод трапеций";
 
     protected int k = 2;
 

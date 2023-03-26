@@ -1,4 +1,5 @@
 import console.ConsoleWorker;
+import console.Messages;
 import dto.Answer;
 import dto.InputData;
 import integral.Integral;
@@ -15,5 +16,6 @@ public class Main {
         Method method = cWorker.readMethod();
         Answer answer = method.solve(integral);
 
+        Messages.showAnswer(answer);
     }
 }

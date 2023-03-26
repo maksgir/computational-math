@@ -53,7 +53,7 @@ public class ConsoleWorker {
     public Method readMethod() {
         String answer;
         do {
-            Messages.chooseIntegral();
+            Messages.chooseMethod();
 
             answer = in.nextLine().trim();
 
@@ -71,7 +71,7 @@ public class ConsoleWorker {
     public RectangleAbstract readRectangleMethod() {
         String answer;
         do {
-            Messages.chooseIntegral();
+            Messages.chooseRectangleMethod();
 
             answer = in.nextLine().trim();
 

@@ -8,6 +8,7 @@ import util.TriFunction;
 import java.util.Arrays;
 
 public abstract class RectangleAbstract extends Method {
+    public static String name = "Метод прямоугольников";
     protected int k = 2;
 
     protected Answer rectangleSolution(Integral integral, TriFunction<Double, Integer, Double, Double> functionForX) {

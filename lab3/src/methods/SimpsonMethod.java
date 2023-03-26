@@ -5,6 +5,8 @@ import integral.Integral;
 
 
 public class SimpsonMethod extends Method {
+    public static String name = "Метод Симпсона";
+
 
     protected int k = 4;
 
