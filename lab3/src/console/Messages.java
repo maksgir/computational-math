@@ -1,31 +1,31 @@
 package console;
 
 import dto.Answer;
-import integral.FirstIntegral;
-import integral.SecondIntegral;
-import integral.ThirdIntegral;
+import integral.*;
 import methods.*;
 
 public class Messages {
     public static void chooseIntegral() {
         System.out.println("Выберите интеграл, который будем решать:");
-        System.out.println("\t1." + FirstIntegral.fName );
-        System.out.println("\t2." + SecondIntegral.fName );
-        System.out.println("\t3." + ThirdIntegral.fName );
+        System.out.println("\t1." + FirstIntegral.fName);
+        System.out.println("\t2." + SecondIntegral.fName);
+        System.out.println("\t3." + ThirdIntegral.fName);
+        System.out.println("\t4. " + ConvergentIntegral.fName);
+        System.out.println("\t5. " + DivergentIntegral.fName);
     }
 
     public static void chooseMethod() {
         System.out.println("Выберите метод, которым будем решать интеграл:");
-        System.out.println("\t1." + RectangleAbstract.name );
-        System.out.println("\t2." + TrapezoidalMethod.name );
-        System.out.println("\t3." + SimpsonMethod.name );
+        System.out.println("\t1." + RectangleAbstract.name);
+        System.out.println("\t2." + TrapezoidalMethod.name);
+        System.out.println("\t3." + SimpsonMethod.name);
     }
 
     public static void chooseRectangleMethod() {
         System.out.println("Выберите метод, которым будем решать интеграл:");
-        System.out.println("\t1." + LeftRectangle.name );
-        System.out.println("\t2." + MediumRectangle.name );
-        System.out.println("\t3." + RightRectangle.name );
+        System.out.println("\t1." + LeftRectangle.name);
+        System.out.println("\t2." + MediumRectangle.name);
+        System.out.println("\t3." + RightRectangle.name);
     }
 
     public static void inputA() {
@@ -45,6 +45,11 @@ public class Messages {
     }
 
     public static void showAnswer(Answer answer) {
-        System.out.println("Ответ: " + answer.getAnswer() + " за " + answer.getN()+" итераций");
+        System.out.println("Ответ: " + answer.getAnswer() + " за " + answer.getN() + " итераций");
     }
+
+    public static void showConvergentAnswer(double sum) {
+        System.out.println("Введенный интеграл - несобственный сходящийся, ответ: " + sum);
+    }
+
 }

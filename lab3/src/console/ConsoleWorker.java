@@ -1,10 +1,7 @@
 package console;
 
 import dto.InputData;
-import integral.FirstIntegral;
-import integral.Integral;
-import integral.SecondIntegral;
-import integral.ThirdIntegral;
+import integral.*;
 import methods.*;
 
 
@@ -21,11 +18,13 @@ public class ConsoleWorker {
 
             answer = in.nextLine().trim();
 
-        } while (!(answer.equals("1") || answer.equals("2") || answer.equals("3")));
+        } while (!(answer.equals("1") || answer.equals("2") || answer.equals("3") || answer.equals("4") || answer.equals("5")));
 
         return switch (answer) {
             case "2" -> new SecondIntegral();
             case "3" -> new ThirdIntegral();
+            case "4" -> new ConvergentIntegral();
+            case "5" -> new DivergentIntegral();
             default -> new FirstIntegral();
         };
     }

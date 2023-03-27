@@ -9,6 +9,8 @@ public abstract class Integral {
 
     public abstract Double func(Double x);
 
+    public abstract double primordial(double x);
+
     public InputData getData() {
         return data;
     }

@@ -7,4 +7,9 @@ public class FirstIntegral extends Integral {
     public Double func(Double x) {
         return 4 * x * x * x - 5 * x * x + 6 * x - 7;
     }
+
+    @Override
+    public double primordial(double x) {
+        return 1;
+    }
 }

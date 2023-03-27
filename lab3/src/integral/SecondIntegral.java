@@ -8,4 +8,9 @@ public class SecondIntegral extends Integral {
     public Double func(Double x) {
         return Math.pow(Math.sin(2 * x), 2) / 7;
     }
+
+    @Override
+    public double primordial(double x) {
+        return 1;
+    }
 }

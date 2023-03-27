@@ -20,7 +20,7 @@ public abstract class Method {
                                     BiFunction<double[], Integer, Double> functionForS,
                                     BiFunction<Double, Double, Double> functionForAns,
                                     int k) {
-
+        System.out.println(integral.getData().getA() + " " + integral.getData().getB());
         InputData data = integral.getData();
         int n = defaultN;
         double h;
