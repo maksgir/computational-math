@@ -37,16 +37,61 @@
                 </div>
             </label>
 
-            <div id="input-table">
-                <table id="">
+            <div id="console-input">
+                <table id="" class="table-input">
                     <button class="button" type="button" onclick="clean_table()">Очистить таблицу</button>
                     <tr class="first-line">
                         <th>X</th>
                         <th>Y</th>
                     </tr>
-                    <tbody id="body">
-
-                    </tbody>
+                    <tr>
+                        <td><input class="input_row" type="number" id="row-1-x" name="row-1-x"></td>
+                        <td><input class="input_row" type="number" id="row-1-y" name="row-1-y"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="input_row" type="number" id="row-2-x" name="row-2-x"></td>
+                        <td><input class="input_row" type="number" id="row-2-y" name="row-2-y"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="input_row" type="number" id="row-3-x" name="row-3-x"></td>
+                        <td><input class="input_row" type="number" id="row-3-y" name="row-3-y"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="input_row" type="number" id="row-4-x" name="row-4-x"></td>
+                        <td><input class="input_row" type="number" id="row-4-y" name="row-4-y"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="input_row" type="number" id="row-5-x" name="row-5-x"></td>
+                        <td><input class="input_row" type="number" id="row-5-y" name="row-5-y"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="input_row" type="number" id="row-6-x" name="row-6-x"></td>
+                        <td><input class="input_row" type="number" id="row-6-y" name="row-6-y"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="input_row" type="number" id="row-7-x" name="row-7-x"></td>
+                        <td><input class="input_row" type="number" id="row-7-y" name="row-7-y"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="input_row" type="number" id="row-8-x" name="row-8-x"></td>
+                        <td><input class="input_row" type="number" id="row-8-y" name="row-8-y"></td>
+                    </tr>
+                    <tr style="display: none">
+                        <td><input class="input_row" type="number" id="row-9-x" name="row-9-x"></td>
+                        <td><input class="input_row" type="number" id="row-9-y" name="row-9-y"></td>
+                    </tr>
+                    <tr style="display: none">
+                        <td><input class="input_row" type="number" id="row-10-x" name="row-10-x"></td>
+                        <td><input class="input_row" type="number" id="row-10-y" name="row-10-y"></td>
+                    </tr>
+                    <tr style="display: none">
+                        <td><input class="input_row" type="number" id="row-11-x" name="row-11-x"></td>
+                        <td><input class="input_row" type="number" id="row-11-y" name="row-11-y"></td>
+                    </tr>
+                    <tr style="display: none">
+                        <td><input class="input_row" type="number" id="row-12-x" name="row-12-x"></td>
+                        <td><input class="input_row" type="number" id="row-12-y" name="row-12-y"></td>
+                    </tr>
                 </table>
             </div>
 

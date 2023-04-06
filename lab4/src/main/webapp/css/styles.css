@@ -79,6 +79,18 @@ tr > th {
     color: rgba(224, 0, 253, 0.92);
 }
 
+.table-input {
+    width: 90%;
+}
+
+.input_row {
+    background-color: #563a59 !important;
+    color: aliceblue;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+
 /*Стиль для кнопки*/
 
 .button {
