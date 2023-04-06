@@ -4,17 +4,72 @@
     <meta charset="UTF-8">
     <title>Вычмат</title>
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/switch.css" rel="stylesheet">
 </head>
 
 <body>
 <div place="header">
     <span>Лабораторная работа №4</span>
-    <span>Гиря Максим Р32131</span>
+    <span>Максим Гиря Р32131</span>
     <span >Вариант: 7</span>
 </div>
 
 <div class="container">
-    <div >
+    <div level="first">
+        <form onsubmit="saveData();return false;">
+            <label>
+                <h3>Исходные данные</h3>
+            </label>
+
+            <input class="input" id="toggle" type="checkbox">
+
+            <label class="label" for="toggle">
+                <div class="left">
+                    Ввести самому
+                </div>
+
+                <div class="switch">
+                    <span class="slider round"></span>
+                </div>
+
+                <div class="right">
+                    Загрузить файл
+                </div>
+            </label>
+
+            <div id="input-table">
+                <table id="">
+                    <button class="button" type="button" onclick="clean_table()">Очистить таблицу</button>
+                    <tr class="first-line">
+                        <th>X</th>
+                        <th>Y</th>
+                    </tr>
+                    <tbody id="body">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <input class="button" type="submit" value="Проверить">
+        </form>
+    </div>
+    <div level="first">
+        <table id="result_table">
+            <button class="button" type="button" onclick="clean_table()">Очистить таблицу</button>
+            <tr class="first-line">
+                <th>X</th>
+                <th>Y</th>
+                <th>R</th>
+                <th>Текущее время</th>
+                <th>Время выполнения</th>
+                <th>Результат</th>
+            </tr>
+            <tbody id="table_body">
+
+            </tbody>
+        </table>
+    </div>
+    <div level="first">
         <h3>Заданная область</h3>
         <svg width="300" height="300">
             <!--Координатные оси-->
@@ -53,46 +108,6 @@
             <text x="170" y="202.5">-R/2</text>
             <text x="170" y="252.5">-R</text>
         </svg>
-    </div>
-    <div >
-        <form onsubmit="saveData();return false;">
-            <label><h3>Значение Х</h3><select class="choose" id="x_val">
-                <option>-4</option>
-                <option>-3</option>
-                <option>-2</option>
-                <option>-1</option>
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select></label><br><br>
-            <label><h3>Значение Y</h3><input id="y_val" class="choose" type="number" min="-3" max="3"/></label><br><br>
-            <label><h3>Значение R</h3><select id="r_val" class="choose">
-                <option>1</option>
-                <option>1.5</option>
-                <option>2</option>
-                <option>2.5</option>
-                <option>3</option>
-            </select></label><br><br><br>
-            <input class="button" type="submit" value="Проверить">
-        </form>
-    </div>
-    <div >
-        <table id="result_table">
-            <button class="button" type="button" onclick="clean_table()">Очистить таблицу</button>
-            <tr class="first-line">
-                <th>X</th>
-                <th>Y</th>
-                <th>R</th>
-                <th>Текущее время</th>
-                <th>Время выполнения</th>
-                <th>Результат</th>
-            </tr>
-            <tbody id="table_body">
-
-            </tbody>
-        </table>
     </div>
 </div>
 <div place="footer">
