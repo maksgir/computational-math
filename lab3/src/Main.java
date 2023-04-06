@@ -15,7 +15,6 @@ import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {
-
         try {
             proceed();
         } catch (Exception e) {
@@ -36,6 +35,8 @@ public class Main {
         List<Point> points = gapScanner.scanPoints();
 
         if (points.size() == 2) {
+            InputData dataForIntegral = new InputData(points.get(0).getX(), points.get(1).getX(), data.getE());
+            integral.setData(dataForIntegral);
             Answer answer = method.solve(integral);
             endWithSimpleAnswer(answer);
         } else {

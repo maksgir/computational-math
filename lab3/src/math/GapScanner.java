@@ -61,7 +61,6 @@ public class GapScanner {
             }
         }
 
-        System.out.println(points);
         return points;
     }
 

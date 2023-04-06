@@ -20,20 +20,16 @@ public abstract class Method {
                                     BiFunction<double[], Integer, Double> functionForS,
                                     BiFunction<Double, Double, Double> functionForAns,
                                     int k) {
-        System.out.println(integral.getData().getA() + " " + integral.getData().getB());
         InputData data = integral.getData();
         int n = defaultN;
         double h;
         double previous = Double.MAX_VALUE;
         double current;
-
         int it = 0;
-
         while (true) {
             it++;
             h = (data.getB() - data.getA()) / n;
             double[] y = new double[rangeForY.apply(n)];
-
             for (int i = 0; i < rangeForX.apply(n); i++) {
                 double x = functionForX.apply(data.getA(), i, h);
                 y[i] = integral.func(x);
@@ -46,7 +42,6 @@ public abstract class Method {
             previous = current;
             n *= 2;
         }
-
         return new Answer(current, it);
     }
 
