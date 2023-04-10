@@ -42,6 +42,10 @@ function increment() {
 
     if (rows + 1 <= 12) {
         rows++;
+        const str = '#row-' + rows;
+        console.log(str)
+        $(str).css('display', 'table-row');
+
     }
     check_inc();
 
@@ -51,7 +55,12 @@ function increment() {
 function decrement() {
     console.log("dec");
     if (rows - 1 >= 8) {
+        const str = '#row-' + rows;
+        console.log(str)
+        $(str).css('display', 'none');
         rows--;
+
+
     }
     check_dec();
 

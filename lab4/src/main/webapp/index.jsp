@@ -6,6 +6,7 @@
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/switch.css" rel="stylesheet">
     <script src="js/funcs.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body onload="initialize_table()">
@@ -77,19 +78,19 @@
                         <td><input class="input_row" type="number" id="row-8-x" name="row-8-x"></td>
                         <td><input class="input_row" type="number" id="row-8-y" name="row-8-y"></td>
                     </tr>
-                    <tr style="display: none">
+                    <tr id="row-9" style="display: none">
                         <td><input class="input_row" type="number" id="row-9-x" name="row-9-x"></td>
                         <td><input class="input_row" type="number" id="row-9-y" name="row-9-y"></td>
                     </tr>
-                    <tr style="display: none">
+                    <tr id="row-10" style="display: none">
                         <td><input class="input_row" type="number" id="row-10-x" name="row-10-x"></td>
                         <td><input class="input_row" type="number" id="row-10-y" name="row-10-y"></td>
                     </tr>
-                    <tr style="display: none">
+                    <tr id="row-11" style="display: none">
                         <td><input class="input_row" type="number" id="row-11-x" name="row-11-x"></td>
                         <td><input class="input_row" type="number" id="row-11-y" name="row-11-y"></td>
                     </tr>
-                    <tr style="display: none">
+                    <tr id="row-12" style="display: none">
                         <td><input class="input_row" type="number" id="row-12-x" name="row-12-x"></td>
                         <td><input class="input_row" type="number" id="row-12-y" name="row-12-y"></td>
                     </tr>
