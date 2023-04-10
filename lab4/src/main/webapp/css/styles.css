@@ -91,6 +91,17 @@ tr > th {
     font-weight: 500;
 }
 
+.row_button {
+    background-color: rgba(224, 0, 253, 0.92);
+    color: aliceblue;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.disabled_btn {
+    background-color: rgba(92, 91, 93, 0.92);
+}
+
 /*Стиль для кнопки*/
 
 .button {

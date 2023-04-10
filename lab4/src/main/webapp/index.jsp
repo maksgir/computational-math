@@ -5,18 +5,19 @@
     <title>Вычмат</title>
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/switch.css" rel="stylesheet">
+    <script src="js/funcs.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body onload="initialize_table()">
 <div place="header">
     <span>Лабораторная работа №4</span>
     <span>Максим Гиря Р32131</span>
-    <span >Вариант: 7</span>
+    <span>Вариант: 7</span>
 </div>
 
 <div class="container">
     <div level="first">
-        <form onsubmit="saveData();return false;">
+        <form>
             <label>
                 <h3>Исходные данные</h3>
             </label>
@@ -93,8 +94,18 @@
                         <td><input class="input_row" type="number" id="row-12-y" name="row-12-y"></td>
                     </tr>
                 </table>
-            </div>
 
+                <label class="label">
+                    <div class="left">
+                        Количество строк: <span id="row_num"></span>
+                    </div>
+                </label>
+
+                <button id="inc_btn" onclick="increment()" type="button" class="row_button">+</button>
+                <button id="dec_btn" onclick="decrement()" type="button" class="row_button">-</button>
+
+            </div>
+            <br><br>
             <input class="button" type="submit" value="Проверить">
         </form>
     </div>
