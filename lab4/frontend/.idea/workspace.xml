@@ -9,22 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="732efc6e-84e9-4d00-8d4b-a983add1a220" name="Changes" comment="file loading added">
-      <change afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/file_loader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/submit_table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/switch.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/example.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/file_loader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/switch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/table_changer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/table_changer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/table_loader.js" beforeDir="false" />
-    </list>
+    <list default="true" id="732efc6e-84e9-4d00-8d4b-a983add1a220" name="Changes" comment="file loading added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,11 +22,12 @@
         <option value="CSS File" />
         <option value="Class" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -57,6 +43,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -81,6 +68,7 @@
       <workItem from="1681125752052" duration="27638000" />
       <workItem from="1681164640875" duration="23000" />
       <workItem from="1681164678729" duration="6000" />
+      <workItem from="1681164751895" duration="2532000" />
     </task>
     <task id="LOCAL-00001" summary="залил старый фронт">
       <created>1680806928694</created>

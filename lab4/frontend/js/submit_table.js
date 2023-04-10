@@ -10,7 +10,7 @@ function submitForm(event) {
 
     $.ajax({
         type: 'POST',
-        url: '/api/submit',
+        url: 'http://localhost:8080/api/submit',
         contentType: "application/json",
         data: JSON.stringify(points),
         dataType: 'json',
