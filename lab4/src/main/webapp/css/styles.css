@@ -15,7 +15,7 @@ body {
     margin: 30px;
     border: 1px solid #000;
     padding: 15px;
-    min-width: 25%;
+    width: 27%;
     background-color: rgb(28, 29, 28);
 }
 
@@ -56,6 +56,15 @@ div h3 {
     margin-left: 15%;
     margin-right: 15%;
     text-align: center;
+}
+
+div h5 {
+    background-color: rgb(141, 80, 190);
+    border-radius: 15px;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+
 }
 
 .choose {
@@ -100,6 +109,30 @@ tr > th {
 
 .disabled_btn {
     background-color: rgba(92, 91, 93, 0.92);
+}
+
+.row_num {
+    background-color: rgb(113, 11, 197);
+    color: aliceblue;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.example-img {
+    size: auto;
+    width: 70%;
+    padding-left: 13%;
+
+}
+
+.choose_btn {
+    color: aliceblue;
+    background-color: rgb(113, 11, 197);
+    font-size: 15px;
+    font-weight: 700;
+
 }
 
 /*Стиль для кнопки*/

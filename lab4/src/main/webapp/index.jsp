@@ -5,8 +5,12 @@
     <title>Вычмат</title>
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/switch.css" rel="stylesheet">
-    <script src="js/funcs.js" type="text/javascript"></script>
+    <script src="js/table_changer.js" type="text/javascript"></script>
+    <script src="js/switch.js" type="text/javascript"></script>
+    <script src="js/table_loader.js" type="text/javascript"></script>
+    <script src="js/file_loader.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 
 <body onload="initialize_table()">
@@ -18,7 +22,7 @@
 
 <div class="container">
     <div level="first">
-        <form>
+        <form >
             <label>
                 <h3>Исходные данные</h3>
             </label>
@@ -30,7 +34,7 @@
                     Ввести самому
                 </div>
 
-                <div class="switch">
+                <div class="switch" onclick="switch_input()">
                     <span class="slider round"></span>
                 </div>
 
@@ -38,10 +42,10 @@
                     Загрузить файл
                 </div>
             </label>
+            <br>
 
             <div id="console-input">
                 <table id="" class="table-input">
-                    <button class="button" type="button" onclick="clean_table()">Очистить таблицу</button>
                     <tr class="first-line">
                         <th>X</th>
                         <th>Y</th>
@@ -96,18 +100,25 @@
                     </tr>
                 </table>
 
-                <label class="label">
-                    <div class="left">
-                        Количество строк: <span id="row_num"></span>
-                    </div>
-                </label>
-
                 <button id="inc_btn" onclick="increment()" type="button" class="row_button">+</button>
                 <button id="dec_btn" onclick="decrement()" type="button" class="row_button">-</button>
+                <span id="row_num" class="row_num"></span>
+                <br><br>
+                <input class="button" type="button" value="Проверить" onclick="submit_table()">
+            </div>
+            <div id="file-input" style="display: none">
+                <label>
+                    <h5>Шаблон входных данных</h5>
+                </label>
+                <img src="img/example.png" class="example-img">
+                    <br><br>
+                    <input type="file" id="file_field" name="file" class="choose_btn">
+                    <br><br>
 
+                <input class="button" type="button" value="Проверить" onclick="submit_file()">
             </div>
             <br><br>
-            <input class="button" type="submit" value="Проверить">
+
         </form>
     </div>
     <div level="first">
