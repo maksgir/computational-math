@@ -63,9 +63,9 @@ public class MathService {
         String min = null;
 
         double[] arr = {linear, square, cubic,
-                exponential == null ? 2 : exponential,
-                logarithmic == null ? 2 : logarithmic,
-                power == null ? 2 : power};
+                exponential == null ? Double.MAX_VALUE : exponential,
+                logarithmic == null ? Double.MAX_VALUE : logarithmic,
+                power == null ? Double.MAX_VALUE : power};
         arr = Arrays.stream(arr).sorted().toArray();
 
         if (arr[0] == linear) {
