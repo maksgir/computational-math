@@ -1,46 +1,89 @@
 function submitForm(event) {
+
+    const inputs1 = document.getElementsByTagName('input');
+    let error = false;
+    let set = new Set();
+    for (let i = 0; i < rows * 2; i++) {
+        const val = parseFloat(inputs1[i].value);
+        console.log(val);
+        console.log(set)
+        if (isNaN(val) || val < -100 || val > 100) {
+            inputs1[i].classList.add('error');
+            error = true;
+        } else {
+            inputs1[i].classList.remove('error');
+            if (set.has(val) && i % 2 === 0) {
+                for (j = 0; j < rows * 2; j += 2) {
+                    const new_val = parseFloat(inputs1[j].value);
+                    if (new_val === val) {
+                        inputs1[j].classList.add('error');
+                    }
+                }
+                error = true;
+            }
+            if (i % 2 === 0){
+                set.add(val);
+            }
+
+
+        }
+    }
+    if (error) {
+        return;
+    }
+
+
     event.preventDefault();
     const form = document.querySelector('form');
     const inputs = Array.from(form.querySelectorAll('input[type="number"]'));
     const values = inputs.map(input => parseFloat(input.value));
+    console.log(values)
 
     let points = parseTable(values);
 
+
     console.log(JSON.stringify(points))
-    http://localhost:8080/api/submit
-        $.ajax({
-            type: 'POST',
-            url: 'http://localhost:8080/api/submit',
-            contentType: "application/json",
-            data: JSON.stringify(points),
-            dataType: 'json',
-            success: (data) => {
-                console.log(data);
 
-                min_x = points[0].x;
-                max_x = points[0].x;
+    $.ajax({
+        type: 'POST',
+        url: backendUrl,
+        contentType: "application/json",
+        data: JSON.stringify(points),
+        dataType: 'json',
+        success: (data) => {
+            console.log(data);
 
-                min_y = points[0].y;
-                max_y = points[0].y;
+            let min_x = points[0].x;
+            let max_x = points[0].x;
 
-                points.forEach((point) => {
-                    min_x = Math.min(min_x, point.x);
-                    max_x = Math.max(max_x, point.x);
+            let min_y = points[0].y;
+            let max_y = points[0].y;
 
-                    min_y = Math.min(min_y, point.y);
-                    max_y = Math.max(max_y, point.y);
-                });
+            points.forEach((point) => {
+                min_x = Math.min(min_x, point.x);
+                max_x = Math.max(max_x, point.x);
 
-                board = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [min_x - 1, max_y + 1, max_x + 1, min_y - 1], axis: true, showCopyright: false});
+                min_y = Math.min(min_y, point.y);
+                max_y = Math.max(max_y, point.y);
+            });
 
-                functionRule = getFunction(data);
+            board = JXG.JSXGraph.initBoard('jxgbox', {
+                boundingbox: [min_x - 1, max_y + 1, max_x + 1, min_y - 1],
+                axis: true,
+                showCopyright: false
+            });
 
-                board.create('functiongraph',[functionRule, min_x, max_x]);
+            let functionRule = getFunction(data);
 
-                draw_points(board, points);
+            board.create('functiongraph', [functionRule, min_x, max_x]);
 
-                $("#result").html(getTypeTextRepresentation(data));
-                $("#function").html(getFunctionTextRepresentation(data));
-            }
-        });
+            draw_points(board, points);
+
+            $("#result").html(getTypeTextRepresentation(data));
+            $("#function").html(getFunctionTextRepresentation(data));
+        }
+    });
 }
+
+
+

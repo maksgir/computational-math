@@ -54,6 +54,10 @@ input[type="number"]:focus {
     outline: none;
 }
 
+.error {
+    background-color: #ec3853!important;
+}
+
 .submit {
     background-color: #6c5ce7;
     border: none;
@@ -88,6 +92,7 @@ input[type="number"]:focus {
     background-color: #3c344b;
     padding: 20px;
     height: 100%;
+
 }
 
 .result h2 {
@@ -126,4 +131,10 @@ input[type="number"]:focus {
 .first-line {
     font-size: 20px;
     font-weight: 900!important;
+}
+
+.jxgbox {
+    margin-left: 35%!important;
+    width: 500px;
+    height: 300px;
 }

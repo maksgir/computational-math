@@ -1,7 +1,10 @@
 let rows = 8;
+let board;
+
 
 function initialize_table() {
     rows = 8;
+    board = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-6, 6, 6, -6], axis: true, showCopyright: false});
     checkRowLimits();
 }
 
@@ -43,8 +46,6 @@ function increment() {
         $(str).css('display', 'table-row');
 
     }
-
-
     checkRowLimits();
 }
 
@@ -56,10 +57,7 @@ function decrement() {
         console.log(str)
         $(str).css('display', 'none');
         rows--;
-
-
     }
-
     checkRowLimits();
 }
 

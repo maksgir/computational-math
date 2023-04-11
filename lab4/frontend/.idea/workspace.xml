@@ -49,6 +49,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -69,6 +70,7 @@
       <workItem from="1681164640875" duration="23000" />
       <workItem from="1681164678729" duration="6000" />
       <workItem from="1681164751895" duration="3576000" />
+      <workItem from="1681196169496" duration="6607000" />
     </task>
     <task id="LOCAL-00001" summary="залил старый фронт">
       <created>1680806928694</created>
