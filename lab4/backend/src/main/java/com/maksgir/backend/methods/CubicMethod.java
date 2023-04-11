@@ -4,9 +4,13 @@ import com.maksgir.backend.dto.Point;
 import com.maksgir.backend.math.ApproximationCounter;
 import com.maksgir.backend.math.GaussSystemSolver;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+@Component
 public class CubicMethod {
     private double SX;
     private double SY;
@@ -26,7 +30,7 @@ public class CubicMethod {
     @Autowired
     private ApproximationCounter apprCounter;
 
-    public double solve(List<Point> points) {
+    public List<Double> solve(List<Point> points) {
         int n = points.size();
 
         for (Point p : points) {
@@ -43,7 +47,7 @@ public class CubicMethod {
             S6X += x * x * x * x * x * x;
 
             SXXY += x * x * y;
-            SXXY += x * x * x * y;
+            SXXXY += x * x * x * y;
         }
 
         double[][] matrix = new double[4][5];
@@ -59,6 +63,9 @@ public class CubicMethod {
         double x2 = answer[2];
         double x3 = answer[3];
 
-        return apprCounter.count(points, x -> (x0 + x1 * x + x2 * x * x + x3 * x * x * x));
+        List<Double> list = new ArrayList(Arrays.asList(x0, x1, x2, x3,
+                apprCounter.count(points, x -> (x0 + x1 * x + x2 * x * x + x3 * x * x * x))));
+
+        return list;
     }
 }

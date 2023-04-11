@@ -3,6 +3,7 @@ package com.maksgir.backend.service;
 import com.maksgir.backend.dto.Answer;
 import com.maksgir.backend.dto.Point;
 import com.maksgir.backend.methods.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -11,21 +12,53 @@ import java.util.List;
 @Component
 public class MathService {
 
+    @Autowired
     private LinearMethod linearMethod;
+    @Autowired
     private SquareMethod squareMethod;
+    @Autowired
     private CubicMethod cubicMethod;
+    @Autowired
     private ExponentialMethod exponentialMethod;
+    @Autowired
     private LogarithmicMethod logarithmicMethod;
+    @Autowired
     private PowerMethod powerMethod;
 
     public Answer solve(List<Point> pointList) {
+        List<Double> linearList = linearMethod.solve(pointList);
+        double linear = linearList.remove(linearList.size() - 1);
 
-        double linear = linearMethod.solve(pointList);
-        double square = squareMethod.solve(pointList);
-        double cubic = cubicMethod.solve(pointList);
-        Double exponential = exponentialMethod.solve(pointList, linearMethod);
-        Double logarithmic = logarithmicMethod.solve(pointList, linearMethod);
-        Double power = powerMethod.solve(pointList, linearMethod);
+        List<Double> squareList = squareMethod.solve(pointList);
+        double square = squareList.remove(squareList.size() - 1);
+
+        List<Double> cubicList = cubicMethod.solve(pointList);
+        double cubic = cubicList.remove(cubicList.size() - 1);
+
+
+        List<Double> exponentialList = exponentialMethod.solve(pointList, linearMethod);
+        Double exponential;
+        if (exponentialList != null) {
+            exponential = exponentialList.remove(exponentialList.size() - 1);
+        } else {
+            exponential = null;
+        }
+
+        List<Double> logarithmicList = logarithmicMethod.solve(pointList, linearMethod);
+        Double logarithmic;
+        if (logarithmicList != null) {
+            logarithmic = logarithmicList.remove(logarithmicList.size() - 1);
+        } else {
+            logarithmic = null;
+        }
+
+        List<Double> powerList = powerMethod.solve(pointList, linearMethod);
+        Double power;
+        if (powerList != null) {
+            power = powerList.remove(powerList.size() - 1);
+        } else {
+            power = null;
+        }
 
         String min = null;
 
@@ -49,7 +82,7 @@ public class MathService {
             min = "power";
         }
 
-        return new Answer(min, linear, square, cubic, exponential, logarithmic, power);
+        return new Answer(min, linearList, squareList, cubicList, exponentialList, logarithmicList, powerList);
     }
 
 }

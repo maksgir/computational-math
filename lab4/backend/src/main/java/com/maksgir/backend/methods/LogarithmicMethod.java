@@ -1,11 +1,12 @@
 package com.maksgir.backend.methods;
 
 import com.maksgir.backend.dto.Point;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+@Component
 public class LogarithmicMethod {
-    public Double solve(List<Point> points, LinearMethod linearMethod) {
+    public List<Double> solve(List<Point> points, LinearMethod linearMethod) {
         for (Point p: points){
             double x = p.getX();
             if (x <= 0){

@@ -21,8 +21,8 @@
         <option value="Jsp File" />
         <option value="CSS File" />
         <option value="Class" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -68,7 +68,7 @@
       <workItem from="1681125752052" duration="27638000" />
       <workItem from="1681164640875" duration="23000" />
       <workItem from="1681164678729" duration="6000" />
-      <workItem from="1681164751895" duration="2532000" />
+      <workItem from="1681164751895" duration="3576000" />
     </task>
     <task id="LOCAL-00001" summary="залил старый фронт">
       <created>1680806928694</created>

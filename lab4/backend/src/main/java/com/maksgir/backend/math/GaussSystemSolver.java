@@ -63,14 +63,3 @@ public class GaussSystemSolver {
     }
 }
 
-
-//            for j_in_i_line in range(i, n + 1):
-//            matrix[i][j_in_i_line] = matrix[i][j_in_i_line]/i_i
-//
-//            for j_after_i in range(i + 1, n):
-//            j_line_head = matrix[j_after_i][i]
-//            for k in range(i, n + 1):
-//            matrix[j_after_i][k] = matrix[j_after_i][k] - j_line_head*matrix[i][k]
-//            print_matrix("", matrix)
-//            print("------------Triangulize matrix end--------------")
-//            return matrix

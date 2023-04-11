@@ -22,6 +22,8 @@ public class MathController {
         System.out.println(points.size());
         points.forEach(System.out::println);
 
-        return service.solve(points);
+        Answer answer = service.solve(points);
+
+        return answer;
     }
 }

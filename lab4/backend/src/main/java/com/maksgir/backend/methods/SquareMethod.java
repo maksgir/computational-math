@@ -4,9 +4,13 @@ import com.maksgir.backend.dto.Point;
 import com.maksgir.backend.math.ApproximationCounter;
 import com.maksgir.backend.math.GaussSystemSolver;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+@Component
 public class SquareMethod {
 
     private double SX;
@@ -25,7 +29,7 @@ public class SquareMethod {
     @Autowired
     private ApproximationCounter apprCounter;
 
-    public double solve(List<Point> points) {
+    public List<Double> solve(List<Point> points) {
         int n = points.size();
 
         for (Point p : points) {
@@ -46,10 +50,14 @@ public class SquareMethod {
         matrix[2] = new double[]{SXX, SXXX, SXXXX, SXXY};
         double[] answer = gauss.solve(matrix);
 
+
         double x0 = answer[0];
         double x1 = answer[1];
         double x2 = answer[2];
 
-        return apprCounter.count(points, x -> (x0 + x1 * x + x2 * x * x));
+        List<Double> list = new ArrayList(Arrays.asList(x0, x1, x2,
+                apprCounter.count(points, x -> (x0 + x1 * x + x2 * x * x))));
+
+        return list;
     }
 }
