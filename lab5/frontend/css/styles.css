@@ -1,0 +1,140 @@
+body {
+    background-color: #2e2c3d;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 40px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+form {
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #6c5ce7;
+    color: #fff;
+    font-weight: normal;
+}
+
+
+input[type="number"] {
+    background-color: #3c344b;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+input[type="number"]:focus {
+    outline: none;
+}
+
+.error {
+    background-color: #ec3853!important;
+}
+
+.submit {
+    background-color: #6c5ce7;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.submit:hover {
+    background-color: #a29bfe;
+}
+
+.load-button {
+    background-color: #40b63b;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-left: 200px;
+    transition: background-color 0.3s ease-in-out;
+}
+.load-button:hover {
+    background-color: #71b66f;
+}
+
+.result {
+    background-color: #3c344b;
+    padding: 20px;
+    height: 100%;
+
+}
+
+.result h2 {
+    margin-top: 0;
+}
+
+.result p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.add-row,
+.remove-row {
+    background-color: rgba(206, 50, 97, 0.92);
+    border: none;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.disabled_btn {
+    background-color: #3c344b;
+}
+
+.add-row::before {
+    content: "+";
+}
+
+.remove-row::before {
+    content: "-";
+}
+
+.first-line {
+    font-size: 20px;
+    font-weight: 900!important;
+}
+
+.jxgbox {
+    margin-left: 35%!important;
+    width: 500px;
+    height: 300px;
+}
