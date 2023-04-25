@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="732efc6e-84e9-4d00-8d4b-a983add1a220" name="Changes" comment="file loading added">
-      <change beforePath="$PROJECT_DIR$/../../lab4/frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/frontend/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="732efc6e-84e9-4d00-8d4b-a983add1a220" name="Changes" comment="file loading added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +71,7 @@
       <workItem from="1681164678729" duration="6000" />
       <workItem from="1681164751895" duration="3576000" />
       <workItem from="1681196169496" duration="6607000" />
-      <workItem from="1682378312411" duration="15000" />
+      <workItem from="1682378312411" duration="6877000" />
     </task>
     <task id="LOCAL-00001" summary="залил старый фронт">
       <created>1680806928694</created>

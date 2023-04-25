@@ -7,7 +7,7 @@ function submitForm(event) {
         const val = parseFloat(inputs1[i].value);
         console.log(val);
         console.log(set)
-        if (isNaN(val) || val < -100 || val > 100) {
+        if (isNaN(val)) {
             inputs1[i].classList.add('error');
             error = true;
         } else {
@@ -52,6 +52,7 @@ function submitForm(event) {
         dataType: 'json',
         success: (data) => {
             console.log(data);
+            build_table(data.n, data.finiteDifference)
 
             let min_x = points[0].x;
             let max_x = points[0].x;

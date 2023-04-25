@@ -1,6 +1,6 @@
 function isValid(x) {
 
-    return !isNaN(x) && (x >= -100 && x <= 100);
+    return !isNaN(x);
 }
 
 function parseTable(cells) {

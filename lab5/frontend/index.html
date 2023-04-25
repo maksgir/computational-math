@@ -15,6 +15,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" charset="UTF-8"
             src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+            src="js/input-switch.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+            src="js/func_loader.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+            src="js/result_builder.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css"/>
 </head>
 <body onload="initialize_table()">
@@ -31,52 +37,52 @@
             </thead>
             <tbody>
             <tr>
-                <td><input type="number" placeholder="Enter X" min="-100" max="100" name="x1" step="any" required></td>
-                <td><input type="number" placeholder="Enter Y" min="-100" max="100" name="y1" step="any" required></td>
+                <td><input type="number" placeholder="Enter X" name="x1" step="any" required></td>
+                <td><input type="number" placeholder="Enter Y" name="y1" step="any" required></td>
             </tr>
             <tr>
-                <td><input type="number" placeholder="Enter X" min="-100" max="100" name="x2" step="any" required></td>
-                <td><input type="number" placeholder="Enter Y" min="-100" max="100" name="y2" step="any" required></td>
+                <td><input type="number" placeholder="Enter X" name="x2" step="any" required></td>
+                <td><input type="number" placeholder="Enter Y" name="y2" step="any" required></td>
             </tr>
             <tr>
-                <td><input type="number" placeholder="Enter X" min="-100" max="100" name="x3" step="any" required></td>
-                <td><input type="number" placeholder="Enter Y" min="-100" max="100" name="y3" step="any" required></td>
+                <td><input type="number" placeholder="Enter X" name="x3" step="any" required></td>
+                <td><input type="number" placeholder="Enter Y" name="y3" step="any" required></td>
             </tr>
             <tr>
-                <td><input type="number" placeholder="Enter X" min="-100" max="100" name="x4" step="any" required></td>
-                <td><input type="number" placeholder="Enter Y" min="-100" max="100" name="y4" step="any" required></td>
+                <td><input type="number" placeholder="Enter X" name="x4" step="any" required></td>
+                <td><input type="number" placeholder="Enter Y" name="y4" step="any" required></td>
             </tr>
             <tr>
-                <td><input type="number" placeholder="Enter X" min="-100" max="100" name="x5" step="any" required></td>
-                <td><input type="number" placeholder="Enter Y" min="-100" max="100" name="y5" step="any" required></td>
+                <td><input type="number" placeholder="Enter X" name="x5" step="any" required></td>
+                <td><input type="number" placeholder="Enter Y" name="y5" step="any" required></td>
             </tr>
-            <tr>
-                <td><input type="number" placeholder="Enter X" min="-100" max="100" name="x6" step="any" required></td>
-                <td><input type="number" placeholder="Enter Y" min="-100" max="100" name="y6" step="any" required></td>
+            <tr id="row-6" style="display: none">
+                <td><input type="number" placeholder="Enter X" name="x6" step="any" required></td>
+                <td><input type="number" placeholder="Enter Y" name="y6" step="any" required></td>
             </tr>
-            <tr>
-                <td><input type="number" placeholder="Enter X" min="-100" max="100" name="x7" step="any" required></td>
-                <td><input type="number" placeholder="Enter Y" min="-100" max="100" name="y7" step="any" required></td>
+            <tr id="row-7" style="display: none">
+                <td><input type="number" placeholder="Enter X" name="x7" step="any" required></td>
+                <td><input type="number" placeholder="Enter Y" name="y7" step="any" required></td>
             </tr>
-            <tr>
-                <td><input type="number" placeholder="Enter X" min="-100" max="100" name="x8" step="any" required></td>
-                <td><input type="number" placeholder="Enter Y" min="-100" max="100" name="y8" step="any" required></td>
+            <tr id="row-8" style="display: none">
+                <td><input type="number" placeholder="Enter X" name="x8" step="any" required></td>
+                <td><input type="number" placeholder="Enter Y" name="y8" step="any" required></td>
             </tr>
             <tr id="row-9" style="display: none">
-                <td><input type="number" placeholder="Enter X" min="-100" max="100" name="x9" step="any"></td>
-                <td><input type="number" placeholder="Enter Y" min="-100" max="100" name="y9" step="any"></td>
+                <td><input type="number" placeholder="Enter X" name="x9" step="any"></td>
+                <td><input type="number" placeholder="Enter Y" name="y9" step="any"></td>
             </tr>
             <tr id="row-10" style="display: none">
-                <td><input type="number" placeholder="Enter X" min="-100" max="100" name="x10" step="any"></td>
-                <td><input type="number" placeholder="Enter Y" min="-100" max="100" name="y10" step="any"></td>
+                <td><input type="number" placeholder="Enter X" name="x10" step="any"></td>
+                <td><input type="number" placeholder="Enter Y" name="y10" step="any"></td>
             </tr>
             <tr id="row-11" style="display: none">
-                <td><input type="number" placeholder="Enter X" min="-100" max="100" name="x11" step="any"></td>
-                <td><input type="number" placeholder="Enter Y" min="-100" max="100" name="y11" step="any"></td>
+                <td><input type="number" placeholder="Enter X" name="x11" step="any"></td>
+                <td><input type="number" placeholder="Enter Y" name="y11" step="any"></td>
             </tr>
             <tr id="row-12" style="display: none">
-                <td><input type="number" placeholder="Enter X" min="-100" max="100" name="x12" step="any"></td>
-                <td><input type="number" placeholder="Enter Y" min="-100" max="100" name="y12" step="any"></td>
+                <td><input type="number" placeholder="Enter X" name="x12" step="any"></td>
+                <td><input type="number" placeholder="Enter Y" name="y12" step="any"></td>
             </tr>
             <tr>
                 <td>
@@ -91,24 +97,55 @@
         <br>
         <button class="submit" type="button" onclick="submitForm(event)">Send</button>
         <button type="button" class="load-button" onclick="loadFile()">Load File</button>
+        <br><br>
+        <button type="button" class="choose-button" onclick="chooseFunc()">Choose Function</button>
 
     </form>
+
+    <div style="display: none; justify-content: center; padding-top: 40px; margin: 0 auto; max-width: 500px;"
+         id="function-input">
+        <input type="radio" name="toggle-option" id="sin-option" checked>
+        <label for="sin-option" class="radio-choose">SIN X</label>
+        <input type="radio" name="toggle-option" id="square-option">
+        <label for="square-option" class="radio-choose">X^2 + X</label>
+
+        <br><br>
+        <div>
+            <div class="row-choose">
+                <input type="number" id="input-a" style="width: 50%" placeholder="Enter A" min="-100" max="100"
+                       name="LEFT" step="any">
+                <input type="number" id="input-b" style="width: 50%" placeholder="Enter B" min="-100" max="100"
+                       name="RIGHT" step="any">
+            </div>
+            <div class="row-choose">
+                <input type="number" id="input-n" placeholder="Enter N" min="0" max="100" name="N" step="any">
+            </div>
+            <BR><BR>
+            <button type="button" class="load-button" onclick="loadFunc()">Load Function</button>
+            <br><br>
+        </div>
+
+
+    </div>
     <br>
     <div class="result">
         <h1>Result:</h1>
 
-        <div id="jxgbox" class="jxgbox"></div><br>
+        <div id="tableContainer"></div>
 
-            <div>
-                <h2><span>Лучшая аппроксимирующая функция: </span></h2>
-                <br>
-                <h2>
-                    <span id="result"></span>
-                    <span>f(x): </span>
-                    <span id="function"></span>
-                </h2>
+        <div id="jxgbox" class="jxgbox"></div>
+        <br>
 
-            </div>
+        <div>
+            <h2><span>Лучшая аппроксимирующая функция: </span></h2>
+            <br>
+            <h2>
+                <span id="result"></span>
+                <span>f(x): </span>
+                <span id="function"></span>
+            </h2>
+
+        </div>
 
     </div>
 </div>

@@ -1,9 +1,9 @@
-let rows = 8;
+let rows = 5;
 let board;
 
 
 function initialize_table() {
-    rows = 8;
+    rows = 5;
     board = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-6, 6, 6, -6], axis: true, showCopyright: false});
     checkRowLimits();
 }
@@ -16,7 +16,7 @@ function checkRowLimits() {
 }
 
 function checkRemove() {
-    if (rows === 8) {
+    if (rows === 5) {
         document.querySelector('#dec_btn').disabled = true;
         document.getElementById("dec_btn").classList.add("disabled_btn");
     }
@@ -32,7 +32,7 @@ function checkAdd() {
         document.querySelector('#inc_btn').disabled = true;
         document.getElementById("inc_btn").classList.add("disabled_btn");
     }
-    if (rows === 9) {
+    if (rows === 6) {
         document.querySelector('#dec_btn').disabled = false;
         document.getElementById("dec_btn").classList.remove("disabled_btn")
     }
@@ -52,7 +52,7 @@ function increment() {
 function decrement() {
     console.log("dec");
     console.log(rows)
-    if (rows - 1 >= 8) {
+    if (rows - 1 >= 5) {
         const str = '#row-' + rows;
         console.log(str)
         $(str).css('display', 'none');

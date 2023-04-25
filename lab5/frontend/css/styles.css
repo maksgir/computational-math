@@ -55,7 +55,7 @@ input[type="number"]:focus {
 }
 
 .error {
-    background-color: #ec3853!important;
+    background-color: #ec3853 !important;
 }
 
 .submit {
@@ -84,8 +84,38 @@ input[type="number"]:focus {
     margin-left: 200px;
     transition: background-color 0.3s ease-in-out;
 }
+
 .load-button:hover {
     background-color: #71b66f;
+}
+
+.choose-button {
+    background-color: #15b27e;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.choose-button:hover {
+    background-color: #5bad8b;
+}
+
+.radio-choose {
+    padding: 10px 20px;
+    background-color: #6c5ce7;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.row-choose {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .result {
@@ -130,11 +160,11 @@ input[type="number"]:focus {
 
 .first-line {
     font-size: 20px;
-    font-weight: 900!important;
+    font-weight: 900 !important;
 }
 
 .jxgbox {
-    margin-left: 35%!important;
+    margin-left: 35% !important;
     width: 500px;
     height: 300px;
 }
