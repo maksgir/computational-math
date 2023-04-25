@@ -125,6 +125,11 @@ input[type="number"]:focus {
 
 }
 
+.x-button {
+    background-color: #4d4b54;
+    color: #fff;
+}
+
 .result h2 {
     margin-top: 0;
 }
@@ -167,4 +172,9 @@ input[type="number"]:focus {
     margin-left: 35% !important;
     width: 500px;
     height: 300px;
+}
+
+#tableContainer {
+    margin: 0 auto;
+    max-width: 800px;
 }

@@ -21,6 +21,8 @@
             src="js/func_loader.js"></script>
     <script type="text/javascript" charset="UTF-8"
             src="js/result_builder.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+            src="js/counter.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css"/>
 </head>
 <body onload="initialize_table()">
@@ -131,21 +133,42 @@
     <div class="result">
         <h1>Result:</h1>
 
+        <h2>Таблица конечных разностей:</h2>
         <div id="tableContainer"></div>
+        <br><br>
+
+        <h2>Введите значение X для приблеженного подсчета:</h2>
+        <div style="display: none; justify-content: center; padding-top: 40px; margin: 0 auto; max-width: 500px;" id="x-input">
+            <div>
+                <div class="row-choose">
+                    <input type="number" class="x-button" id="input-X" placeholder="Enter X" name="X" step="any">
+                </div>
+                <BR><BR>
+                <button type="button" class="load-button" onclick="countX()">Count</button>
+                <br><br>
+                <div class="row-choose">
+                    <h2> Ответ полученный методом Ньютона:
+                        <span id="newton_result"></span>
+                    </h2>
+                </div>
+                <br><br>
+                <div class="row-choose">
+                    <h2> Ответ полученный методом Лагранжа:
+                        <span id="lagrange_result"></span>
+                    </h2>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <br><br>
+
+
 
         <div id="jxgbox" class="jxgbox"></div>
         <br>
-
-        <div>
-            <h2><span>Лучшая аппроксимирующая функция: </span></h2>
-            <br>
-            <h2>
-                <span id="result"></span>
-                <span>f(x): </span>
-                <span id="function"></span>
-            </h2>
-
-        </div>
 
     </div>
 </div>

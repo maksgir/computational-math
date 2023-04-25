@@ -51,10 +51,12 @@ function loadFunc() {
         $(str).css('display', 'table-row');
         checkRowLimits();
 
-        xInput.value = isValid(x) ? x : "gg";
-        yInput.value = isValid(y) ? y : "gg";
+        xInput.value = isValid(x) ? x.toFixed(2) : "gg";
+        yInput.value = isValid(y) ? y.toFixed(2) : "gg";
 
     }
+
+
 
     console.log(arr);
 

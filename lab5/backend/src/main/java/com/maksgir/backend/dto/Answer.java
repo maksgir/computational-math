@@ -8,8 +8,8 @@ import java.util.List;
 @Setter
 @Getter
 public class Answer {
-    private List<Double> newton;
-    private Double cLang;
+    private double[] newton;
+    private double[] cLang;
     private double[][] finiteDifference;
     private int n;
 

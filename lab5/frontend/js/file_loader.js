@@ -17,8 +17,8 @@ function loadFile() {
                     $(str).css('display', 'table-row');
                     checkRowLimits();
 
-                    xInput.value = isValid(values[0])?values[0]:"gg";
-                    yInput.value = isValid(values[1])?values[1]:"gg";
+                    xInput.value = isValid(values[0])?values[0].toFixed(2):"gg";
+                    yInput.value = isValid(values[1])?values[1].toFixed(2):"gg";
                 }
             }
         }

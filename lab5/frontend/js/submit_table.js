@@ -1,3 +1,8 @@
+let points;
+let lagrangeFunc;
+let newtonFunc;
+
+
 function submitForm(event) {
 
     const inputs1 = document.getElementsByTagName('input');
@@ -5,8 +10,6 @@ function submitForm(event) {
     let set = new Set();
     for (let i = 0; i < rows * 2; i++) {
         const val = parseFloat(inputs1[i].value);
-        console.log(val);
-        console.log(set)
         if (isNaN(val)) {
             inputs1[i].classList.add('error');
             error = true;
@@ -37,12 +40,8 @@ function submitForm(event) {
     const form = document.querySelector('form');
     const inputs = Array.from(form.querySelectorAll('input[type="number"]'));
     const values = inputs.map(input => parseFloat(input.value));
-    console.log(values)
 
-    let points = parseTable(values);
-
-
-    console.log(JSON.stringify(points))
+    points = parseTable(values);
 
     $.ajax({
         type: 'POST',
@@ -52,7 +51,10 @@ function submitForm(event) {
         dataType: 'json',
         success: (data) => {
             console.log(data);
-            build_table(data.n, data.finiteDifference)
+            build_table(data.n, data.finiteDifference);
+            newton_arr = data.newton;
+            lagrange_arr = data.cLang;
+            xs = data.xs;
 
             let min_x = points[0].x;
             let max_x = points[0].x;
@@ -69,21 +71,28 @@ function submitForm(event) {
             });
 
             board = JXG.JSXGraph.initBoard('jxgbox', {
-                boundingbox: [min_x - 1, max_y + 1, max_x + 1, min_y - 1],
+                boundingbox: [min_x - 5, max_y + 5, max_x + 5, min_y - 5],
                 axis: true,
                 showCopyright: false
             });
 
-            let functionRule = getFunction(data);
+            lagrangeFunc = getLagrangeFunc(data.clang);
+            newtonFunc = getNewtonFunc(data.newton);
 
-            board.create('functiongraph', [functionRule, min_x, max_x]);
+
+            board.create('functiongraph', [lagrangeFunc, min_x, max_x]);
+            board.create('functiongraph', [newtonFunc, min_x, max_x], {strokecolor:'red'});
 
             draw_points(board, points);
 
-            $("#result").html(getTypeTextRepresentation(data));
-            $("#function").html(getFunctionTextRepresentation(data));
         }
     });
+}
+
+function countX(){
+    const target_x = parseInt(document.getElementById("input-X").value);
+    $("#lagrange_result").text(lagrangeFunc(target_x));
+    $("#newton_result").text(newtonFunc(target_x));
 }
 
 
