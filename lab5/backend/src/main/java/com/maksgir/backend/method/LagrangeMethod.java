@@ -20,7 +20,8 @@ public class LagrangeMethod {
                     c *= points.get(i).getX() - points.get(j).getX();
                 }
             }
-            l[i] = points.get(i).getY() / c;
+            l[i] = points.get(i).getY() /
+                    c;
         }
 
         return l;

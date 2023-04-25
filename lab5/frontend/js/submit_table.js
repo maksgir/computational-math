@@ -90,7 +90,7 @@ function submitForm(event) {
 }
 
 function countX(){
-    const target_x = parseInt(document.getElementById("input-X").value);
+    const target_x = parseFloat(document.getElementById("input-X").value);
     $("#lagrange_result").text(lagrangeFunc(target_x));
     $("#newton_result").text(newtonFunc(target_x));
 }

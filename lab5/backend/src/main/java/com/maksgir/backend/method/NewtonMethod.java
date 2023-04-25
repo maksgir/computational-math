@@ -29,7 +29,7 @@ public class NewtonMethod {
         }
         double[] brr = new double[n];
         for (int i = 0; i < n; i++) {
-            brr[i] = arr[i][i];
+            brr[i] = arr[0][i];
 
         }
 

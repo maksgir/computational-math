@@ -8,6 +8,7 @@ function getNewtonFunc(newton_coef) {
             for (let j = 0; j <= i; j++) {
                 product *= (x - points[j].x);
             }
+
             result += newton_coef[i] * product / (fact(i + 1) * Math.pow(h, i + 1));
         }
 
