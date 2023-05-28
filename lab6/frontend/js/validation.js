@@ -54,6 +54,11 @@ function validateForm() {
         isValid = false;
     }
 
+    if (!Number.isInteger(h)) {
+        markAsInvalid("h", "Invalid value. Please enter an integer value for h.");
+        isValid = false;
+    }
+
     if (isValid) {
         var dto = {
             functionId: functionId,
