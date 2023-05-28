@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab6</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form id="myForm">
+        <div class="form-row">
+            <h3>Select Function:</h3>
+            <select id="function" name="function">
+                <option value="1">y' = x + y</option>
+                <option value="2">y' = x^2 + y^2</option>
+                <option value="3">y' = y + (1 + x)y^2</option>
+            </select>
+        </div>
+        <div class="form-row">
+            <div style="flex: 1;">
+                <h3>Y0:</h3>
+                <input type="text" id="y0" name="y0" placeholder="Initial y ">
+            </div>
+            <div style="flex: 1;">
+                <h3>X0:</h3>
+                <input type="text" id="x0" name="x0" placeholder="Initial x ">
+            </div>
+        </div>
+        <div class="form-row">
+            <div style="flex: 1;">
+                <h3>Xn:</h3>
+                <input type="text" id="xn" name="xn" placeholder="Right interval ">
+            </div>
+            <div style="flex: 1;">
+                <h3>H:</h3>
+                <input type="text" id="h" name="h" placeholder="Step">
+            </div>
+            <div style="flex: 1;">
+                <h3>E:</h3>
+                <input type="text" id="e" name="e" placeholder="Accuracy">
+            </div>
+        </div>
+        <div class="form-row">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+<script src="js/main.js"></script>
+<script src="js/styles_work.js"></script>
+<script src="js/validation.js"></script>
+</html>
