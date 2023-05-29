@@ -10,10 +10,11 @@ import com.example.backend.method.MilnMethod;
 import com.example.backend.method.ModifiedEulerMethod;
 import com.example.backend.method.RungeKuttaMethod;
 import com.example.backend.util.ExactValuesCounter;
-import com.example.backend.util.RangesCounter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -46,11 +47,25 @@ public class SolvingService {
         String errorMSG = null;
         try {
             milnPoints = milnMethod.countPoints(input, equation, rungePoints);
-        } catch (Exception e){
+        } catch (Exception e) {
             errorMSG = e.getMessage();
         }
 
-        return new ServiceAnswer(exactPoints, eulerPoints, rungePoints, milnPoints, errorMSG);
+        double xMin = Collections.min(exactPoints.stream().map(Point::getX).toList());
+        double xMax = Collections.max(exactPoints.stream().map(Point::getX).toList());
+
+        double y1Min = Collections.min(exactPoints.stream().map(Point::getY).toList());
+        double y2Min = Collections.min(eulerPoints.stream().map(Point::getY).toList());
+        double y3Min = Collections.min(rungePoints.stream().map(Point::getY).toList());
+        double y1Max = Collections.max(exactPoints.stream().map(Point::getY).toList());
+        double y2Max = Collections.max(eulerPoints.stream().map(Point::getY).toList());
+        double y3Max = Collections.max(rungePoints.stream().map(Point::getY).toList());
+
+        double yMin = Math.min(Math.min(y1Min, y2Min), y3Min);
+        double yMax = Math.max(Math.max(y1Max, y2Max), y3Max);
+
+
+        return new ServiceAnswer(exactPoints, eulerPoints, rungePoints, milnPoints, errorMSG, xMin, xMax, yMin, yMax);
     }
 
 }

@@ -18,6 +18,11 @@ public class ServiceAnswer {
     List<Point> milnPoints;
     String errorMsg;
 
+    double xMin;
+    double xMax;
+    double yMin;
+    double yMax;
+
 }
 
 
