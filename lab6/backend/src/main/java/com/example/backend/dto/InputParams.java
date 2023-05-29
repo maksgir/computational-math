@@ -17,7 +17,7 @@ public class InputParams {
     double y0;
     double x0;
     double xn;
-    int h;
+    double h;
     double e;
 
 

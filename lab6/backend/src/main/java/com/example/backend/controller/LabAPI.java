@@ -1,7 +1,7 @@
 package com.example.backend.controller;
 
 
-import com.example.backend.dto.Answer;
+import com.example.backend.dto.ServiceAnswer;
 import com.example.backend.dto.InputParams;
 import com.example.backend.service.SolvingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +17,8 @@ public class LabAPI {
 
 
     @PostMapping("/submit")
-    public Answer solve(@RequestBody InputParams input) {
-        System.out.println(input);
+    public ServiceAnswer solve(@RequestBody InputParams input) {
 
-        return null;
+        return service.solve(input);
     }
 }
