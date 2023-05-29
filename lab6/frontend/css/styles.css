@@ -74,3 +74,55 @@ input[type="submit"]:hover {
     80% { transform: translateX(10px); }
     100% { transform: translateX(0); }
 }
+
+#display-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.array-block {
+    background-color: #e8e8e8;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    color: #333333;
+}
+
+.array-block h2 {
+    background-color: #3366cc;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+}
+
+.array-block p {
+    background-color: #dc8a7e;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+}
+
+.table-container {
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+#jxgbox {
+    width: 500px;
+    height: 300px;
+    margin-left: 30%;
+}
+

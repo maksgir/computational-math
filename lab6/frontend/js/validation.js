@@ -1,4 +1,4 @@
-function validateForm() {
+function validateForm(board) {
     // Reset validation styles
     resetValidation();
 
@@ -64,6 +64,6 @@ function validateForm() {
             e: e
         };
 
-        submitForm(dto);
+        submitForm(dto, board);
     }
 }
