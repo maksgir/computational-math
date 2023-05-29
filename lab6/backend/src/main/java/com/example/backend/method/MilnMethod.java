@@ -28,8 +28,10 @@ public class MilnMethod {
         }
 
         List<Double> y = new ArrayList<>();
+        List<Point> ans = new ArrayList<>();
 
         for (int i = 0; i < 4; i++) {
+            ans.add(rungeResult.get(i));
             y.add(rungeResult.get(i).getY());
         }
 
@@ -37,15 +39,16 @@ public class MilnMethod {
             double predict = getPrediction(params.getH(), equation, xs, y, i);
             double correction = getCorrection(params.getH(), equation, xs, y, i, predict);
 
-            while (Math.abs(correction - predict) > params.getH()){
+            while (Math.abs(correction - predict) > params.getH()) {
                 predict = correction;
                 correction = getCorrection(params.getH(), equation, xs, y, i, predict);
             }
 
             y.add(correction);
+            ans.add(new Point(xs.get(i), correction));
         }
 
-        return null;
+        return ans;
     }
 
     private double getPrediction(double step, DifferentialEquation f, List<Double> x, List<Double> y, int i) {
