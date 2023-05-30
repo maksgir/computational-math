@@ -11,7 +11,6 @@ $(document).ready(() => {
 
 
 function submitForm(dto, board) {
-    // Implement your submit function here
     console.log(dto);
 
     $.ajax({
@@ -62,7 +61,12 @@ function generateDisplayBlock(data) {
                 const xCell = document.createElement("td");
                 xCell.textContent = point.x.toFixed(3);
                 const yCell = document.createElement("td");
-                yCell.textContent = point.y.toFixed(3);
+                if (isFinite(point.y)) {
+                    yCell.textContent = point.y.toFixed(3);
+                } else {
+                    yCell.textContent = point.y;
+                }
+
                 tableRow.appendChild(xCell);
                 tableRow.appendChild(yCell);
                 table.appendChild(tableRow);
@@ -70,7 +74,6 @@ function generateDisplayBlock(data) {
 
             arrayBlock.appendChild(table);
         } else {
-            // Create a paragraph element to display the error message
             const errorMessage = document.createElement("p");
             errorMessage.textContent = arrayData === null ? data.errorMsg : "No data available.";
             arrayBlock.appendChild(errorMessage);
@@ -105,6 +108,15 @@ function generateGraph(data, board) {
 }
 
 function draw_points(board, points, color) {
+
+    for (let i = 0; i < points.length; i++) {
+        let point = points[i];
+        if (!isFinite(point.y)) {
+
+            return;
+        }
+    }
+
     points.forEach((point) => {
         board.create("point", [point.x, point.y], {fixed: true, color: color, label: "point"});
     });

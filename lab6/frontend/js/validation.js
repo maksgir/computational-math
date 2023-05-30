@@ -1,8 +1,8 @@
 function validateForm(board) {
-    // Reset validation styles
+
     resetValidation();
 
-    // Get form values
+
     var functionId = parseFloat(document.getElementById('function').value);
     const y0 = parseFloat(document.getElementById("y0").value.replace(",", "."));
     const x0 = parseFloat(document.getElementById("x0").value.replace(",", "."));
@@ -11,7 +11,6 @@ function validateForm(board) {
     const e = parseFloat(document.getElementById("e").value.replace(",", "."));
 
 
-    // Perform validation
     var isValid = true;
 
     if (isNaN(y0)) {

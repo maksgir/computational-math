@@ -51,21 +51,59 @@ public class SolvingService {
             errorMSG = e.getMessage();
         }
 
-        double xMin = Collections.min(exactPoints.stream().map(Point::getX).toList());
-        double xMax = Collections.max(exactPoints.stream().map(Point::getX).toList());
+        double xMin = findMinX(exactPoints);
+        double xMax = findMaxX(exactPoints);
 
-        double y1Min = Collections.min(exactPoints.stream().map(Point::getY).toList());
-        double y2Min = Collections.min(eulerPoints.stream().map(Point::getY).toList());
-        double y3Min = Collections.min(rungePoints.stream().map(Point::getY).toList());
-        double y1Max = Collections.max(exactPoints.stream().map(Point::getY).toList());
-        double y2Max = Collections.max(eulerPoints.stream().map(Point::getY).toList());
-        double y3Max = Collections.max(rungePoints.stream().map(Point::getY).toList());
+        double yMin = findMinY(exactPoints);
+        double yMax = findMaxY(exactPoints);
 
-        double yMin = Math.min(Math.min(y1Min, y2Min), y3Min);
-        double yMax = Math.max(Math.max(y1Max, y2Max), y3Max);
+        ServiceAnswer answer = new ServiceAnswer(exactPoints, eulerPoints, rungePoints, milnPoints, errorMSG, xMin, xMax, yMin, yMax);
+        System.out.println(answer);
+        return answer;
+    }
 
+    private Double findMinX(List<Point> points) {
+        double min = Double.MAX_VALUE;
+        for (Point p : points) {
+            if (Double.isFinite(p.getX())){
+                min = Math.min(p.getX(), min);
+            }
+        }
 
-        return new ServiceAnswer(exactPoints, eulerPoints, rungePoints, milnPoints, errorMSG, xMin, xMax, yMin, yMax);
+        return min;
+    }
+
+    private Double findMaxX(List<Point> points) {
+        double min = Double.MIN_VALUE;
+        for (Point p : points) {
+            if (Double.isFinite(p.getX())){
+                min = Math.max(p.getX(), min);
+            }
+        }
+
+        return min;
+    }
+
+    private Double findMinY(List<Point> points) {
+        double min = Double.MAX_VALUE;
+        for (Point p : points) {
+            if (Double.isFinite(p.getY())){
+                min = Math.min(p.getY(), min);
+            }
+        }
+
+        return min;
+    }
+
+    private Double findMaxY(List<Point> points) {
+        double min = Double.MIN_VALUE;
+        for (Point p : points) {
+            if (Double.isFinite(p.getY())){
+                min = Math.max(p.getY(), min);
+            }
+        }
+
+        return min;
     }
 
 }
